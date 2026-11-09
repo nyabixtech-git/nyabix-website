@@ -1,0 +1,44 @@
+.faq__layout { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 70px; align-items: start; }
+.faq__intro { position: sticky; top: 120px; }
+.faq__intro h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 800; }
+.faq__intro p { margin: 16px 0 30px; font-size: 17px; color: var(--ink-3); }
+
+.faq__list { display: grid; gap: 14px; }
+.faq__item {
+  border-radius: 20px; border: 1px solid var(--line); background: #fff;
+  transition: border-color .35s, box-shadow .35s, background .35s, opacity .9s var(--ease), transform .9s var(--ease);
+}
+.faq__item:hover { border-color: var(--blue-300); }
+.faq__item.is-open { border-color: transparent; background: var(--bg-soft); box-shadow: inset 0 0 0 1.5px var(--blue-400); }
+.faq__q {
+  width: 100%; display: flex; align-items: center; gap: 18px;
+  padding: 22px 24px; background: none; border: 0; text-align: left;
+}
+.faq__num {
+  flex-shrink: 0; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px;
+  background: var(--bg-soft); color: var(--blue-700); font-weight: 800; font-size: 15px;
+  transition: background .35s, color .35s;
+}
+.faq__item.is-open .faq__num { background: var(--grad); color: #fff; }
+.faq__text { flex: 1; font-size: 17px; font-weight: 700; color: var(--ink); }
+.faq__icon {
+  flex-shrink: 0; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid var(--line); color: var(--ink-2);
+  transition: transform .45s var(--ease), background .35s, color .35s, border-color .35s;
+}
+.faq__item.is-open .faq__icon { transform: rotate(135deg); background: var(--navy-900); color: #fff; border-color: var(--navy-900); }
+.faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+.faq__item.is-open .faq__a { grid-template-rows: 1fr; }
+.faq__a > div { overflow: hidden; }
+.faq__a p { padding: 0 24px 24px 80px; color: var(--ink-2); font-size: 15.5px; }
+
+@media (max-width: 980px) {
+  .faq__layout { grid-template-columns: 1fr; gap: 40px; }
+  .faq__intro { position: static; }
+}
+@media (max-width: 600px) {
+  .faq__q { padding: 18px; gap: 12px; }
+  .faq__text { font-size: 15.5px; }
+  .faq__num { width: 32px; height: 32px; font-size: 13px; }
+  .faq__a p { padding: 0 18px 20px 18px; }
+}

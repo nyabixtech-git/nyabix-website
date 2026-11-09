@@ -1,0 +1,42 @@
+.process__track { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.process__line { position: absolute; top: 48px; left: 10%; right: 10%; height: 3px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.process__line span { position: absolute; inset: 0; background: var(--grad); transform-origin: left; transform: scaleX(0); transition: transform 2.2s var(--ease) .3s; }
+.process__track.is-in .process__line span { transform: scaleX(1); }
+
+.process__step {
+  position: relative; text-align: center; padding: 0 6px;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  transition-delay: calc(var(--i) * .35s + .2s);
+}
+.process__track.is-in .process__step { opacity: 1; transform: none; }
+.process__icon {
+  position: relative; margin: 0 auto; width: 96px; height: 96px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #fff; border: 2px solid var(--line); color: var(--blue-600);
+  box-shadow: 0 0 0 8px #fff, var(--shadow);
+  transition: background .4s, color .4s, border-color .4s, transform .5s var(--ease);
+}
+.process__track.is-in .process__icon {
+  animation: step-light .6s var(--ease) forwards;
+  animation-delay: calc(var(--i) * .35s + .5s);
+}
+@keyframes step-light { to { background: var(--grad); color: #fff; border-color: transparent; } }
+.process__step:hover .process__icon { transform: translateY(-8px) scale(1.05); }
+.process__num {
+  position: absolute; top: -2px; right: -2px; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 13px; font-weight: 800;
+  background: var(--navy-900); color: #fff; border: 3px solid #fff;
+}
+.process__step h4 { margin-top: 26px; font-size: 20px; font-weight: 800; }
+.process__step p { margin-top: 8px; font-size: 15px; color: var(--ink-3); }
+
+@media (max-width: 900px) {
+  .process__track { grid-template-columns: 1fr; gap: 0; max-width: 520px; margin: 0 auto; }
+  .process__line { top: 48px; bottom: 84px; left: 47px; right: auto; width: 3px; height: auto; }
+  .process__line span { transform-origin: top; transform: scaleY(0); }
+  .process__track.is-in .process__line span { transform: scaleY(1); }
+  .process__step { display: grid; grid-template-columns: 96px 1fr; column-gap: 24px; text-align: left; padding: 0 0 36px; }
+  .process__icon { grid-row: span 2; margin: 0; }
+  .process__step h4 { margin-top: 18px; }
+}
