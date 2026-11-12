@@ -9,11 +9,40 @@ const budgets = ['< $10k', '$10k – $50k', '$50k – $100k', '$100k+'];
 export default function Contact() {
   const [budget, setBudget] = useState(budgets[1]);
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    // TODO: connect to your backend, Formspree, EmailJS, etc.
-    setSent(true);
+    setLoading(true);
+    setError(null);
+
+    // Collect all form inputs natively
+    const formData = new FormData(e.target);
+
+    // Append your Web3Forms access key and selected budget state manually
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
+    formData.append("budget", budget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+        e.target.reset(); // Reset form fields
+      } else {
+        setError(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -40,6 +69,8 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={onSubmit}>
+              {error && <p className="contact__error" style={{ color: '#ef4444', marginBottom: '1rem' }}>{error}</p>}
+
               <div className="field-row">
                 <label className="field"><input required placeholder=" " name="name" /><span>Full name</span></label>
                 <label className="field"><input required type="email" placeholder=" " name="email" /><span>Work email</span></label>
@@ -57,7 +88,10 @@ export default function Contact() {
                 </div>
               </div>
               <label className="field"><textarea required placeholder=" " rows={4} name="message" /><span>Tell us about your project</span></label>
-              <button className="btn btn--primary contact__submit" type="submit">Send Message <Icon name="arrow" size={18} /></button>
+
+              <button className="btn btn--primary contact__submit" type="submit" disabled={loading}>
+                {loading ? 'Sending...' : <>Send Message <Icon name="arrow" size={18} /></>}
+              </button>
             </form>
           )}
         </Reveal>

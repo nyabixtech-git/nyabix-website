@@ -17,7 +17,7 @@ function CountLine({ value, suffix, label, start }) {
 
 export default function Proof() {
   const [ref, inView] = useInView({ threshold: 0.3 });
-  const { projects, engineering, team, awards } = proofCards;
+  const { projects, engineering, team } = proofCards;
 
   return (
     <section className="proof" id="proof" ref={ref}>
@@ -45,14 +45,14 @@ export default function Proof() {
             {team.initials.map((ini, i) => (
               <span className="avatar" key={ini} style={{ '--i': i }}>{ini}</span>
             ))}
-            <span className="avatar avatar--more">+50</span>
+            <span className="avatar avatar--more">+10</span>
           </div>
           <h4>{team.title}</h4>
           <hr />
           <p className="proof__muted">{team.body}</p>
         </Reveal>
 
-        <Reveal className="proof__card proof__card--awards" delay={240}>
+        {/* <Reveal className="proof__card proof__card--awards" delay={240}>
           <h4>{awards.title}</h4>
           <hr />
           <p className="proof__muted">{awards.body}</p>
@@ -64,7 +64,7 @@ export default function Proof() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

@@ -1,0 +1,509 @@
+/* ------------------------------------------------------------------
+   NYABIX — case studies
+   Each object powers one card on the home page AND one full page at
+   /case-studies/<slug>. All content below is SAMPLE content — replace
+   it with your real projects, clients, numbers and quotes.
+------------------------------------------------------------------- */
+
+export const caseStudies = [
+  {
+    slug: 'ap-automation-invoice-checking',
+    tag: 'Finance',
+    title: 'AP Automation – Checking Supplier Invoices Before They Get Paid',
+    body: 'AI-powered invoice validation that checks supplier invoices against SAP before approval.',
+    metric: '12',
+    metricLabel: 'automated SAP checks',
+    hue: 220,
+    visual: 'web',
+    client: 'Client Name',
+    services: ['AI Software Development'],
+    industry: 'Finance',
+    timeline: 'In Progress',
+    platforms: ['Web', 'SAP Integration'],
+    summary:
+      'An AI-powered accounts payable solution that reads supplier invoices, validates them against SAP, identifies discrepancies, and provides approvers with transparent evidence before any payment is approved.',
+
+    about: [
+      'Anyone working in accounts payable knows the challenge: invoices pile up, data is retyped manually, documents are checked against purchase orders, and teams hope that costly mistakes do not slip through.',
+      'NYABIX developed AP Automation to streamline this process. The platform reads supplier invoices, compares them against SAP records, performs validation checks, and presents clear evidence to approvers. AI accelerates the review process, while humans remain fully responsible for final approval decisions.',
+    ],
+
+    objectives: [
+      {
+        title: 'Look at Every Invoice',
+        body: 'Ensure every invoice is reviewed and validated before reaching the approval stage.',
+      },
+      {
+        title: 'Show Our Work',
+        body: 'Provide transparent evidence and explanations whenever discrepancies are detected.',
+      },
+      {
+        title: 'Keep People in Charge',
+        body: 'Use AI to assist decision-making while maintaining human control over approvals.',
+      },
+    ],
+
+
+    challenges: [
+      {
+        title: 'Disconnected Invoice and SAP Data',
+        body: 'Invoice information, supplier master data, purchase orders, and service entry records require cross-referencing across multiple SAP datasets, making verification complex and time-consuming.',
+      },
+      {
+        title: 'Complex Multi-Level Validation',
+        body: 'Validating supplier details, PO line items, account assignments, tax information, and service entries requires multiple checks that are difficult to coordinate consistently.',
+      },
+      {
+        title: 'Limited Context for Exception Handling',
+        body: 'When invoice data conflicts with SAP records or required information is missing, finance teams need to investigate manually to determine the appropriate next action.',
+      },
+    ],
+    solution: {
+      intro:
+        'We built an AI-powered invoice validation workflow that extracts invoice data, performs automated SAP checks, identifies duplicates and anomalies, and provides evidence-backed recommendations to approvers.',
+
+      features: [
+        {
+          title: 'Invoice Intelligence',
+          body: 'Automatically extracts invoice details, validates information, and identifies potential duplicate invoices.',
+          icon: 'ai',
+        },
+        {
+          title: 'SAP Validation Engine',
+          body: 'Performs 12 validation checks against SAP records, including purchase orders, suppliers, and banking information.',
+          icon: 'search',
+        },
+        {
+          title: 'Human Approval Workflow',
+          body: 'Approvers review AI findings, make final decisions, and maintain a complete audit trail of every action.',
+          icon: 'check',
+        },
+      ],
+    },
+
+    results: [
+      {
+        value: 12,
+        suffix: '',
+        label: 'automated SAP validation checks',
+      },
+      {
+        value: 31,
+        suffix: '',
+        label: 'sample invoices successfully tested',
+      },
+      {
+        value: 100,
+        suffix: '%',
+        label: 'payments require human approval',
+      },
+      {
+        value: 90,
+        suffix: ' day',
+        label: 'planned customer pilot program',
+      },
+    ],
+
+    impact: [
+      {
+        title: 'Reduced Manual Effort',
+        body: 'Finance teams spend significantly less time entering and checking invoice data.',
+      },
+      {
+        title: 'Greater Payment Confidence',
+        body: 'Approvers receive supporting evidence before making payment decisions.',
+      },
+      {
+        title: 'Lower Risk',
+        body: 'Duplicate invoices and validation issues can be identified before payment processing.',
+      },
+      {
+        title: 'Audit-Ready Process',
+        body: 'Every review, recommendation, and approval decision is fully documented.',
+      },
+    ],
+
+    tech: [
+      {
+        category: 'AI & Automation',
+        items: [
+          { name: 'OCR', desc: 'Invoice data extraction' },
+          { name: 'LLM', desc: 'Invoice analysis and recommendations' },
+        ],
+      },
+      {
+        category: 'Backend',
+        items: [
+          { name: 'Python', desc: 'Automation workflows' },
+          { name: 'FastAPI', desc: 'Application services' },
+        ],
+      },
+      {
+        category: 'Enterprise Integration',
+        items: [
+          { name: 'SAP', desc: 'Invoice and procurement validation' },
+        ],
+      },
+      {
+        category: 'Frontend',
+        items: [
+          { name: 'React', desc: 'Approver dashboard' },
+        ],
+      },
+    ],
+
+    testimonial: {
+      quote:
+        'AP Automation gives our finance team the confidence to review invoices faster while maintaining complete control over payment decisions.',
+      name: 'Finance Director',
+      role: 'Saudi Cargo',
+    },
+  },
+  {
+    slug: 'patient-portal-platform',
+    tag: 'Healthcare',
+    title: 'Patient Portal Platform',
+    body: 'A secure portal for appointments, records and messaging.',
+    metric: '3x',
+    metricLabel: 'faster bookings',
+    hue: 210,
+    visual: 'web',
+    client: 'Regional Clinic Network',
+    services: ['Web Development', 'UI/UX Design', 'Cloud'],
+    industry: 'Healthcare',
+    timeline: '5–6 months',
+    platforms: ['Web', 'iOS', 'Android'],
+    summary: 'A secure, easy-to-use patient portal that lets patients book appointments, view records and message their care team from any device.',
+    about: [
+      'Our client runs a growing network of outpatient clinics. Patients were booking by phone, waiting days for test results and calling front desks for simple questions — which kept staff busy and patients frustrated.',
+      'NYABIX designed and built a single patient portal with online booking, digital records, secure messaging and reminders, integrated with the clinics’ existing scheduling and records systems.',
+    ],
+    objectives: [
+      { title: 'Self-service booking', body: 'Let patients find a slot and book in under a minute, day or night.' },
+      { title: 'Secure access to records', body: 'Give patients safe, private access to results and visit history.' },
+      { title: 'Lighter front-desk load', body: 'Move routine calls and questions to digital channels.' },
+    ],
+    challenges: [
+      { title: 'Legacy system integration', body: 'Scheduling and records lived in separate older systems with limited APIs.' },
+      { title: 'Privacy & compliance', body: 'Patient data needed strict access control, audit trails and encryption.' },
+      { title: 'Patients of all ages', body: 'The experience had to work for tech-savvy users and first-time users alike.' },
+    ],
+    solution: {
+      intro: 'We built an integration layer over the clinic systems, then designed a clean, accessible portal on top of it — tested with real patients at every stage.',
+      features: [
+        { title: 'Smart booking', body: 'Real-time availability across clinics, doctors and visit types with instant confirmation.', icon: 'pm' },
+        { title: 'Secure records & messaging', body: 'Encrypted results, visit notes and two-way messaging with role-based access.', icon: 'shield' },
+        { title: 'Reminders that work', body: 'SMS, email and push reminders that cut no-shows and late cancellations.', icon: 'phone' },
+      ],
+    },
+    results: [
+      { value: 3, suffix: 'x', label: 'faster appointment booking' },
+      { value: 45, suffix: '%', label: 'fewer front-desk calls' },
+      { value: 30, suffix: '%', label: 'drop in missed appointments' },
+      { value: 4.8, decimals: 1, suffix: '★', label: 'average app store rating' },
+    ],
+    impact: [
+      { title: 'Happier patients', body: 'Booking and results moved from days to minutes.' },
+      { title: 'Freed-up staff', body: 'Front-desk teams now focus on in-clinic care.' },
+      { title: 'Compliance built in', body: 'Audit logs and access controls satisfied security reviews.' },
+      { title: 'Ready to scale', body: 'New clinics are onboarded in days, not weeks.' },
+    ],
+    tech: [
+      {
+        category: 'Frontend', items: [
+          { name: 'React', desc: 'Web portal UI' }, { name: 'React Native', desc: 'iOS & Android apps' }]
+      },
+      {
+        category: 'Backend', items: [
+          { name: 'Node.js', desc: 'API & integration layer' }, { name: 'PostgreSQL', desc: 'Primary database' }]
+      },
+      {
+        category: 'Cloud & DevOps', items: [
+          { name: 'AWS', desc: 'Hosting & storage' }, { name: 'Docker', desc: 'Containerised services' }]
+      },
+      {
+        category: 'Design', items: [
+          { name: 'Figma', desc: 'UX flows & UI design' }]
+      },
+    ],
+    testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
+  },
+  {
+    slug: 'payments-dashboard',
+    tag: 'Fintech',
+    title: 'Payments Dashboard',
+    body: 'Real-time transaction monitoring for a growing payments startup.',
+    metric: '40%',
+    metricLabel: 'less manual review',
+    hue: 225,
+    visual: 'web',
+    client: 'Payments Startup',
+    services: ['Web Development', 'Data & Analytics', 'QA Automation'],
+    industry: 'Fintech',
+    timeline: '4 months',
+    platforms: ['Web'],
+    summary: 'A real-time operations dashboard that lets a payments team monitor transactions, flag risk and resolve disputes from one screen.',
+    about: [
+      'The client processes thousands of transactions an hour. Their operations team was jumping between spreadsheets, database queries and email to spot problems and handle disputes.',
+      'NYABIX built a real-time dashboard with live transaction streams, rule-based risk flags and a dispute workflow — giving the team one place to see and act on everything.',
+    ],
+    objectives: [
+      { title: 'Live visibility', body: 'See every transaction and its status as it happens.' },
+      { title: 'Faster risk decisions', body: 'Surface suspicious activity automatically instead of by hand.' },
+      { title: 'Clear audit trail', body: 'Record every action for compliance and reporting.' },
+    ],
+    challenges: [
+      { title: 'High data volume', body: 'The UI had to stay fast while streaming thousands of events per minute.' },
+      { title: 'Complex rules', body: 'Risk rules changed often and needed to be editable without a release.' },
+      { title: 'Zero tolerance for errors', body: 'Money movement meant every number had to be exact and traceable.' },
+    ],
+    solution: {
+      intro: 'We designed an event-driven backend with a streaming UI, a no-code rule editor for the risk team, and automated tests around every financial calculation.',
+      features: [
+        { title: 'Real-time stream', body: 'Live transaction feed with filters, search and instant drill-down.', icon: 'chart' },
+        { title: 'Rule engine', body: 'Risk rules the ops team can create and tune without engineering help.', icon: 'code' },
+        { title: 'Dispute workflow', body: 'Assign, track and resolve disputes with full history and notes.', icon: 'qa' },
+      ],
+    },
+    results: [
+      { value: 40, suffix: '%', label: 'less manual review' },
+      { value: 60, suffix: '%', label: 'faster dispute resolution' },
+      { value: 99.9, decimals: 1, suffix: '%', label: 'platform uptime' },
+      { value: 2, suffix: 's', label: 'data freshness' },
+    ],
+    impact: [
+      { title: 'One source of truth', body: 'Spreadsheets and ad-hoc queries were retired.' },
+      { title: 'Risk caught earlier', body: 'Suspicious patterns are flagged within seconds.' },
+      { title: 'Audit-ready', body: 'Every action is logged and exportable.' },
+      { title: 'Room to grow', body: 'The system scales with transaction volume.' },
+    ],
+    tech: [
+      {
+        category: 'Frontend', items: [
+          { name: 'React', desc: 'Dashboard UI' }, { name: 'TypeScript', desc: 'Type-safe code' }]
+      },
+      {
+        category: 'Backend', items: [
+          { name: 'Node.js', desc: 'Event services' }, { name: 'Kafka', desc: 'Event streaming' }, { name: 'PostgreSQL', desc: 'Ledger data' }]
+      },
+      {
+        category: 'Cloud & DevOps', items: [
+          { name: 'AWS', desc: 'Infrastructure' }, { name: 'Terraform', desc: 'Infrastructure as code' }]
+      },
+      {
+        category: 'Testing', items: [
+          { name: 'Playwright', desc: 'End-to-end tests' }]
+      },
+    ],
+    testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
+  },
+  {
+    slug: 'learning-management-app',
+    tag: 'EdTech',
+    title: 'Learning Management App',
+    body: 'A mobile-first LMS with live classes and progress tracking.',
+    metric: '50k+',
+    metricLabel: 'active learners',
+    hue: 195,
+    visual: 'mobile',
+    client: 'Online Academy',
+    services: ['Mobile Development', 'UI/UX Design', 'Backend'],
+    industry: 'Education',
+    timeline: '6 months',
+    platforms: ['iOS', 'Android', 'Web'],
+    summary: 'A mobile-first learning app with courses, live classes, quizzes and progress tracking for students and teachers.',
+    about: [
+      'The academy was running courses through a mix of video links, chat groups and spreadsheets. Students lost track of lessons and teachers had no clear view of progress.',
+      'NYABIX built a complete learning platform — student app, teacher tools and an admin panel — with live classes, offline lessons and detailed progress reports.',
+    ],
+    objectives: [
+      { title: 'Learning on the go', body: 'Make every course easy to follow on a phone, even offline.' },
+      { title: 'Engaging live classes', body: 'Bring live teaching, chat and polls into one app.' },
+      { title: 'Visible progress', body: 'Show students and teachers exactly where each learner stands.' },
+    ],
+    challenges: [
+      { title: 'Low-bandwidth users', body: 'Many students had slow or unstable connections.' },
+      { title: 'Live class scale', body: 'Classes needed to support hundreds of students at once.' },
+      { title: 'Keeping students motivated', body: 'Course completion rates were low on the old setup.' },
+    ],
+    solution: {
+      intro: 'We focused on a light, fast mobile experience with offline downloads, adaptive video and simple gamification to keep learners coming back.',
+      features: [
+        { title: 'Offline lessons', body: 'Download videos and notes to learn without a connection.', icon: 'mobile' },
+        { title: 'Live classroom', body: 'Low-latency live classes with chat, polls and recordings.', icon: 'web' },
+        { title: 'Progress & streaks', body: 'Quizzes, badges and streaks that make progress visible.', icon: 'star' },
+      ],
+    },
+    results: [
+      { value: 50, suffix: 'k+', label: 'active learners' },
+      { value: 2.4, decimals: 1, suffix: 'x', label: 'course completion rate' },
+      { value: 35, suffix: '%', label: 'longer session time' },
+      { value: 4.7, decimals: 1, suffix: '★', label: 'average app rating' },
+    ],
+    impact: [
+      { title: 'More students finish', body: 'Completion more than doubled after launch.' },
+      { title: 'Teachers save time', body: 'Grading and attendance are largely automated.' },
+      { title: 'Works everywhere', body: 'Offline mode opened courses to new regions.' },
+      { title: 'New revenue', body: 'Paid courses and subscriptions launched in-app.' },
+    ],
+    tech: [
+      {
+        category: 'Mobile', items: [
+          { name: 'Flutter', desc: 'iOS & Android app' }]
+      },
+      {
+        category: 'Backend', items: [
+          { name: 'Django', desc: 'API & admin' }, { name: 'PostgreSQL', desc: 'Database' }, { name: 'Redis', desc: 'Caching & queues' }]
+      },
+      {
+        category: 'Media', items: [
+          { name: 'WebRTC', desc: 'Live classes' }, { name: 'HLS', desc: 'Adaptive video' }]
+      },
+      {
+        category: 'Design', items: [
+          { name: 'Figma', desc: 'UI & prototyping' }]
+      },
+    ],
+    testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
+  },
+  {
+    slug: 'fleet-tracking-system',
+    tag: 'Logistics',
+    title: 'Fleet Tracking System',
+    body: 'Live GPS tracking, route planning and driver apps.',
+    metric: '25%',
+    metricLabel: 'fuel savings',
+    hue: 235,
+    visual: 'mobile',
+    client: 'Logistics Company',
+    services: ['Mobile Development', 'Web Development', 'DevOps & Cloud'],
+    industry: 'Logistics',
+    timeline: '5 months',
+    platforms: ['Web', 'Android'],
+    summary: 'A fleet platform with live vehicle tracking, smart route planning and a driver app that keeps deliveries on time.',
+    about: [
+      'The client manages a fleet of delivery vehicles across several cities. Dispatchers planned routes by hand and had little visibility once vehicles left the depot.',
+      'NYABIX delivered a dispatcher dashboard, a driver app and a route-planning engine, connected to vehicle GPS devices in real time.',
+    ],
+    objectives: [
+      { title: 'Real-time visibility', body: 'Know where every vehicle is at any moment.' },
+      { title: 'Smarter routes', body: 'Plan routes that save fuel and time automatically.' },
+      { title: 'Connected drivers', body: 'Give drivers clear jobs, navigation and proof of delivery.' },
+    ],
+    challenges: [
+      { title: 'Patchy connectivity', body: 'Drivers often lost signal on rural routes.' },
+      { title: 'Many device types', body: 'GPS units from different vendors sent data in different formats.' },
+      { title: 'Daily route changes', body: 'Orders changed throughout the day and routes had to adapt.' },
+    ],
+    solution: {
+      intro: 'We normalised all GPS data into one stream, built an offline-first driver app, and added a route optimiser that re-plans as new orders arrive.',
+      features: [
+        { title: 'Live map', body: 'Every vehicle on one map with status, ETA and alerts.', icon: 'pin' },
+        { title: 'Route optimiser', body: 'Automatic multi-stop route planning that updates in real time.', icon: 'chart' },
+        { title: 'Driver app', body: 'Offline-first jobs, navigation and photo proof of delivery.', icon: 'mobile' },
+      ],
+    },
+    results: [
+      { value: 25, suffix: '%', label: 'fuel savings' },
+      { value: 18, suffix: '%', label: 'more deliveries per day' },
+      { value: 95, suffix: '%', label: 'on-time delivery rate' },
+      { value: 0, suffix: '', label: 'paper delivery notes', text: 'Zero' },
+    ],
+    impact: [
+      { title: 'Lower running costs', body: 'Shorter routes cut fuel and overtime.' },
+      { title: 'Better customer updates', body: 'Customers get live ETAs automatically.' },
+      { title: 'Paperless operations', body: 'Digital proof of delivery replaced paper notes.' },
+      { title: 'Data for decisions', body: 'Reports show driver and route performance.' },
+    ],
+    tech: [
+      {
+        category: 'Frontend', items: [
+          { name: 'React', desc: 'Dispatcher dashboard' }, { name: 'Mapbox', desc: 'Live maps' }]
+      },
+      {
+        category: 'Mobile', items: [
+          { name: 'Kotlin', desc: 'Android driver app' }]
+      },
+      {
+        category: 'Backend', items: [
+          { name: 'Go', desc: 'GPS ingestion' }, { name: 'PostGIS', desc: 'Geo data' }]
+      },
+      {
+        category: 'Cloud & DevOps', items: [
+          { name: 'GCP', desc: 'Hosting' }, { name: 'Kubernetes', desc: 'Service orchestration' }]
+      },
+    ],
+    testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
+  },
+  {
+    slug: 'document-ai-assistant',
+    tag: 'AI',
+    title: 'Document AI Assistant',
+    body: 'An AI assistant that reads, sorts and summarises documents.',
+    metric: '80%',
+    metricLabel: 'time saved',
+    hue: 205,
+    visual: 'web',
+    client: 'Professional Services Firm',
+    services: ['AI & ML', 'Web Development', 'Cloud'],
+    industry: 'Professional Services',
+    timeline: '3 months',
+    platforms: ['Web'],
+    summary: 'An AI assistant that reads incoming documents, sorts them, pulls out key details and writes summaries for the team to review.',
+    about: [
+      'The firm receives hundreds of contracts, invoices and forms every week. Staff spent hours reading, sorting and re-typing key details into other systems.',
+      'NYABIX built an AI assistant that classifies documents, extracts the important fields and drafts summaries — with a simple review screen so people stay in control.',
+    ],
+    objectives: [
+      { title: 'Automate the busywork', body: 'Remove manual sorting and data entry.' },
+      { title: 'Accurate extraction', body: 'Pull key fields with accuracy the team can trust.' },
+      { title: 'Human in the loop', body: 'Let staff review and correct the AI quickly.' },
+    ],
+    challenges: [
+      { title: 'Messy documents', body: 'Scans, photos and PDFs in many layouts and qualities.' },
+      { title: 'Data security', body: 'Client documents could not leave approved infrastructure.' },
+      { title: 'Building trust', body: 'Staff needed to see why the AI made each decision.' },
+    ],
+    solution: {
+      intro: 'We combined OCR, a document classifier and a language model pipeline, deployed in the client’s own cloud, with confidence scores shown on every field.',
+      features: [
+        { title: 'Auto-classification', body: 'Documents are sorted by type the moment they arrive.', icon: 'ai' },
+        { title: 'Field extraction', body: 'Names, dates, amounts and clauses pulled out automatically.', icon: 'search' },
+        { title: 'Review workspace', body: 'Side-by-side view with confidence scores and one-click fixes.', icon: 'check' },
+      ],
+    },
+    results: [
+      { value: 80, suffix: '%', label: 'time saved per document' },
+      { value: 96, suffix: '%', label: 'extraction accuracy' },
+      { value: 500, suffix: '+', label: 'documents processed daily' },
+      { value: 3, suffix: ' mo', label: 'from idea to production' },
+    ],
+    impact: [
+      { title: 'Hours back every week', body: 'Staff moved from data entry to client work.' },
+      { title: 'Fewer errors', body: 'Re-typing mistakes all but disappeared.' },
+      { title: 'Secure by design', body: 'All processing stays inside the firm’s cloud.' },
+      { title: 'Easy to extend', body: 'New document types are added in days.' },
+    ],
+    tech: [
+      {
+        category: 'AI & ML', items: [
+          { name: 'Python', desc: 'ML pipeline' }, { name: 'LLM API', desc: 'Summaries & extraction' }, { name: 'OCR', desc: 'Text from scans' }]
+      },
+      {
+        category: 'Frontend', items: [
+          { name: 'React', desc: 'Review workspace' }]
+      },
+      {
+        category: 'Backend', items: [
+          { name: 'FastAPI', desc: 'Model services' }, { name: 'PostgreSQL', desc: 'Results store' }]
+      },
+      {
+        category: 'Cloud', items: [
+          { name: 'Azure', desc: 'Private deployment' }]
+      },
+    ],
+    testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
+  },
+];
+
+export const getCaseStudy = (slug) => caseStudies.find((c) => c.slug === slug);

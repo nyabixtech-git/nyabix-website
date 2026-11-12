@@ -1,4 +1,5 @@
-import { stats, media } from '../data/content';
+// import { stats, media } from '../data/content';
+import { stats } from '../data/content';
 import useInView from '../hooks/useInView';
 import useCountUp from '../hooks/useCountUp';
 import Reveal from './Reveal';
@@ -43,7 +44,7 @@ export default function Stats() {
           </div>
         </div>
 
-        <div className="media">
+        {/* <div className="media">
           <Reveal as="h3" className="media__title">NYABIX in the <span className="grad-text">Media Spotlight</span></Reveal>
           <div className="marquee" style={{ '--speed': '35s' }}>
             <div className="marquee__track">
@@ -52,7 +53,7 @@ export default function Stats() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

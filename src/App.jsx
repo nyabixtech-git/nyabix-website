@@ -1,39 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Proof from './components/Proof';
-import Stats from './components/Stats';
-import Services from './components/Services';
-import Engagement from './components/Engagement';
-import WhyUs from './components/WhyUs';
-import Process from './components/Process';
-import Leadership from './components/Leadership';
-import CaseStudies from './components/CaseStudies';
-import Testimonials from './components/Testimonials';
-import CtaBand from './components/CtaBand';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollManager from './components/ScrollManager';
+import Home from './pages/Home';
+import CaseStudyPage from './pages/CaseStudyPage';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
+      <ScrollManager />
       <Navbar />
-      <main>
-        <Hero />
-        <Proof />
-        <Stats />
-        <Services />
-        <Engagement />
-        <WhyUs />
-        <Process />
-        <Leadership />
-        <CaseStudies />
-        <Testimonials />
-        <CtaBand />
-        <Faq />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }

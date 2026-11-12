@@ -13,14 +13,16 @@ export const company = {
     bookingUrl: '#contact', // TODO: Calendly or booking link
 };
 
-export const navLinks = [{
+export const navLinks = [
+    {
         label: 'Process',
         href: '#process'
     },
     {
         label: 'About',
         href: '#why',
-        children: [{
+        children: [
+            {
                 label: 'Why NYABIX',
                 href: '#why',
                 desc: 'How we work and what sets us apart'
@@ -41,7 +43,8 @@ export const navLinks = [{
         label: 'Services',
         href: '#services',
         mega: true,
-        children: [{
+        children: [
+            {
                 label: 'AI & Machine Learning',
                 href: '#services',
                 desc: 'Intelligent products and automation'
@@ -98,29 +101,30 @@ export const hero = {
     titleStart: 'Turn Your Digital Ideas Into',
     rotatingWords: ['Products', 'Platforms', 'Apps', 'Results'],
     titleEnd: 'with NYABIX',
-    subtitle: 'Your team just got bigger.',
+    subtitle: 'Our team just got bigger.',
     body: 'NYABIX is a custom software development company building secure products, AI solutions and dedicated engineering teams for growing businesses.',
     primaryCta: 'Hire Dedicated Developers',
     secondaryCta: 'See Our Work',
 };
 
 /* Placeholder client names — replace with your real client logos */
-export const clientLogos = ['Lumora', 'Kestrel', 'Orbitly', 'Fernway', 'Quantix', 'Helixa', 'Brightpath', 'Novanta'];
+export const clientLogos = ['PSO', 'Indus Motors', 'Parco', 'Saudi Cargo'];
 
 export const proofCards = {
     projects: {
-        value: '120+',
+        value: '5+',
         label: 'Successful Projects'
     },
     engineering: {
         title: 'Engineering excellence, measured',
-        lines: [{
-                value: 1500000,
+        lines: [
+            {
+                value: 50000,
                 suffix: '+',
                 label: 'lines of code shipped'
             },
             {
-                value: 10000,
+                value: 2000,
                 suffix: '+',
                 label: 'bugs fixed'
             },
@@ -129,17 +133,18 @@ export const proofCards = {
     team: {
         title: 'Dedicated Development Teams',
         body: 'Handpicked engineers working as an extension of your team.',
-        initials: ['AK', 'SR', 'MH', 'ZA', 'FN'],
+        initials: ['FS', 'DS', 'AA', 'HS', 'HR'],
     },
-    awards: {
-        title: 'Recognition & milestones',
-        body: 'Highlights of progress and industry recognition.',
-        badges: ['Top Rated', 'Top Developers', 'Verified Partner', 'Award 2026'],
-    },
+    // awards: {
+    //     title: 'Recognition & milestones',
+    //     body: 'Highlights of progress and industry recognition.',
+    //     badges: ['Top Rated', 'Top Developers', 'Verified Partner', 'Award 2026'],
+    // },
 };
 
 /* TODO: replace with your real numbers */
-export const stats = [{
+export const stats = [
+    {
         value: 48,
         suffix: ' Hrs',
         label: 'Time to resource a team'
@@ -170,21 +175,36 @@ export const stats = [{
         label: 'Product Success Rate'
     },
     {
-        value: 8,
-        suffix: ' Years',
+        value: 10,
+        suffix: '+ Years',
         label: 'Building software'
     },
     {
-        value: 60,
+        value: 20,
         suffix: '+',
         label: 'Engineers & designers'
     },
 ];
 
 /* Placeholder media names — replace with real press logos */
-export const media = ['TechDaily', 'StartupWire', 'DevWeekly', 'Business Today', 'CodeTimes', 'The Product Post', 'Cloud Review', 'AI Journal'];
+// export const media = ['TechDaily', 'StartupWire', 'DevWeekly', 'Business Today', 'CodeTimes', 'The Product Post', 'Cloud Review', 'AI Journal'];
 
-export const services = [{
+export const services = [
+    {
+        tab: 'SAP Enterprise',
+        title: 'SAP S/4HANA, Fiori & Integration',
+        body: 'Full-lifecycle SAP S/4HANA and ECC engineering — from ABAP OOP, RAP, CDS, and custom RICEF development to modern SAPUI5/Fiori interfaces and seamless BTP, API, and EDI integrations.',
+        tags: ['S/4HANA & ECC', 'ABAP / RAP / CDS', 'SAPUI5 & Fiori', 'SAP BTP', 'EDI & APIs'],
+        icon: 'sap',
+    },
+    {
+        tab: 'SAP AI & Automation',
+        title: 'SAP Business AI & Workflow Automation',
+        body: 'Embed intelligence directly into your ERP with SAP AI Core, SAP Build Process Automation, and custom ML pipelines for automated invoice processing, approvals, and operational forecasting.',
+        tags: ['SAP AI Core', 'Process Automation', 'AP & Invoice AI', 'SAP Build', 'Workflows'],
+        icon: 'sapAi',
+    },
+    {
         tab: 'AI & ML',
         title: 'Artificial Intelligence',
         body: 'Build intelligent software with machine learning, analytics, automation and production-grade MLOps. We work across modern model providers, Python data stacks and cloud-native pipelines.',
@@ -192,18 +212,11 @@ export const services = [{
         icon: 'ai',
     },
     {
-        tab: 'Web Development',
-        title: 'Web Development',
-        body: 'Fast, accessible and scalable web platforms — from marketing sites to complex SaaS dashboards — built with React, Next.js, Node and modern APIs.',
-        tags: ['React / Next.js', 'Node.js', 'SaaS platforms', 'APIs'],
+        tab: 'Web & Mobile',
+        title: 'Web & Mobile Development',
+        body: 'Fast, scalable web platforms and cross-platform mobile apps for iOS and Android — from complex SaaS dashboards to smooth native experiences built with React, Next.js, Node, React Native and Flutter.',
+        tags: ['React / Next.js', 'Node.js', 'React Native / Flutter', 'iOS & Android'],
         icon: 'web',
-    },
-    {
-        tab: 'Mobile Development',
-        title: 'Mobile Development',
-        body: 'Native and cross-platform apps for iOS and Android that feel smooth, load fast and are built to grow with your users.',
-        tags: ['iOS', 'Android', 'React Native', 'Flutter'],
-        icon: 'mobile',
     },
     {
         tab: 'UI/UX Design',
@@ -219,13 +232,13 @@ export const services = [{
         tags: ['AWS / Azure / GCP', 'CI/CD', 'Kubernetes', 'Monitoring'],
         icon: 'cloud',
     },
-    {
-        tab: 'QA Automation',
-        title: 'QA Automation',
-        body: 'Automated and manual testing that catches issues early — end-to-end suites, performance testing and release confidence on every sprint.',
-        tags: ['E2E testing', 'Performance', 'Regression', 'Test strategy'],
-        icon: 'qa',
-    },
+    // {
+    //     tab: 'QA Automation',
+    //     title: 'QA Automation',
+    //     body: 'Automated and manual testing that catches issues early — end-to-end suites, performance testing and release confidence on every sprint.',
+    //     tags: ['E2E testing', 'Performance', 'Regression', 'Test strategy'],
+    //     icon: 'qa',
+    // },
     {
         tab: 'Project Management',
         title: 'Project Management',
@@ -238,7 +251,8 @@ export const services = [{
 export const engagement = {
     title: 'Engagement Models & Specialized Expertise',
     intro: 'Flexible ways to work with us — whether you need a full product built, extra hands on your team, or a long-term development partner.',
-    cards: [{
+    cards: [
+        {
             title: 'Industry-Focused Product Development',
             body: 'Build compliant, reliable software for regulated industries. We deliver secure, scalable products for healthcare, finance and education.',
             listTitle: 'What we deliver',
@@ -263,7 +277,8 @@ export const engagement = {
 export const whyUs = {
     title: 'Why NYABIX',
     intro: 'A team built for speed, accountability and long-term success.',
-    items: [{
+    items: [
+        {
             title: 'Experience Across Industries',
             body: 'From healthcare to fintech to education, we bring domain knowledge that shortens ramp-up and reduces risk.',
             icon: 'shield'
@@ -280,14 +295,15 @@ export const whyUs = {
         },
         {
             title: 'Transparent, Agile Delivery',
-            body: 'Sprint planning, code reviews, velocity tracking and live dashboards — you always know where things stand.',
+            body: 'Sprint planning, code reviews, velocity tracking and live Dashboards — you always know where things stand.',
             icon: 'chart'
         },
     ],
     cta: 'Get a Custom Development Plan',
 };
 
-export const processSteps = [{
+export const processSteps = [
+    {
         title: 'Discover',
         body: 'Understand goals, users and technical requirements',
         icon: 'search'
@@ -315,62 +331,84 @@ export const processSteps = [{
 ];
 
 /* TODO: replace with your real leadership team */
-export const leadership = [{
-        name: 'Founder Name',
+// export const leadership = [
+//     {
+//         name: 'Faizan Saleem',
+//         image: '/1517557074991.jfif',
+//         role: 'Founder & CEO',
+//         bio: 'ABAP/Fiori developer with 9+ years on SAP S/4HANA and ECC, mostly in Order-to-Cash. I’ve delivered RICEF objects across four full S/4HANA lifecycles (Greenfield and Brownfield), building in ABAP OOP, CDS, AMDP, RAP/BOPF, and UI5.',
+//         // initials: 'FS'
+//     },
+//     {
+//         name: 'Partner Name',
+//         role: 'Managing Partner',
+//         bio: 'Add a short bio: the teams they run, notable products, and how they drive delivery.',
+//         initials: 'PN'
+//     },
+//     {
+//         name: 'Partner Name',
+//         role: 'Managing Partner',
+//         bio: 'Add a short bio: the teams they run, notable products, and how they drive delivery.',
+//         initials: 'PN'
+//     },
+//     {
+//         name: 'Partner Name',
+//         role: 'Managing Partner',
+//         bio: 'Add a short bio: the teams they run, notable products, and how they drive delivery.',
+//         initials: 'PN'
+//     },
+//     {
+//         name: 'Partner Name',
+//         role: 'Managing Partner',
+//         bio: 'Add a short bio: the teams they run, notable products, and how they drive delivery.',
+//         initials: 'PN'
+//     },
+// ];
+
+export const leadership = [
+    {
+        name: 'Faizan Saleem',
         role: 'Founder & CEO',
-        bio: 'Add a short bio: years of experience, what they lead, and the vision behind NYABIX.',
-        initials: 'FN'
+        bio: 'SAP process automation and approval-workflow design.',
+        initials: 'FS',
     },
     {
-        name: 'Partner Name',
-        role: 'Managing Partner',
-        bio: 'Add a short bio: the teams they run, notable products, and how they drive delivery.',
-        initials: 'PN'
+        name: 'Hammad Shareef',
+        role: 'Integration Lead',
+        bio: 'System integration across SAP and non-SAP ERPs, APIs and EDI.',
+        initials: 'HS',
+    },
+    {
+        name: 'Fahad Sultan',
+        role: 'Team Lead',
+        bio: 'Engineering leadership and team coordination.',
+        initials: 'FS',
+    },
+    {
+        name: 'Rashad Ahmed',
+        role: 'Delivery Manager',
+        bio: 'Delivery management: planning, onboarding and release.',
+        initials: 'RA',
+    },
+    {
+        name: 'Sumair Khan',
+        role: 'Board Advisor',
+        bio: 'Board advisory and marketing.',
+        initials: 'SK',
+    },
+    {
+        name: 'Inam Abdullah',
+        role: 'Risk and Governance Advisor',
+        bio: 'Risk analysis and governance.',
+        initials: 'IA',
     },
 ];
 
 /* TODO: replace with your real projects */
-export const caseStudies = [{
-        tag: 'Healthcare',
-        title: 'Patient Portal Platform',
-        body: 'A secure portal for appointments, records and messaging.',
-        metric: '3x',
-        metricLabel: 'faster bookings',
-        hue: 210
-    },
-    {
-        tag: 'Fintech',
-        title: 'Payments Dashboard',
-        body: 'Real-time transaction monitoring for a growing payments startup.',
-        metric: '40%',
-        metricLabel: 'less manual review',
-        hue: 225
-    },
-    {
-        tag: 'EdTech',
-        title: 'Learning Management App',
-        body: 'A mobile-first LMS with live classes and progress tracking.',
-        metric: '50k+',
-        metricLabel: 'active learners',
-        hue: 195
-    },
-    {
-        tag: 'Logistics',
-        title: 'Fleet Tracking System',
-        body: 'Live GPS tracking, route planning and driver apps.',
-        metric: '25%',
-        metricLabel: 'fuel savings',
-        hue: 235
-    },
-    {
-        tag: 'AI',
-        title: 'Document AI Assistant',
-        body: 'An AI assistant that reads, sorts and summarises documents.',
-        metric: '80%',
-        metricLabel: 'time saved',
-        hue: 205
-    },
-];
+export {
+    caseStudies
+}
+    from './caseStudies';
 
 /* TODO: replace with genuine reviews from your clients */
 export const testimonials = Array.from({
@@ -388,7 +426,8 @@ export const ctaBand = {
     cta: 'Find Your Software Solution',
 };
 
-export const faqs = [{
+export const faqs = [
+    {
         q: 'Why should I choose NYABIX for custom software development?',
         a: 'We combine strong engineering, flexible engagement models and a business-first approach. We learn your goals, recommend the right technology and deliver software aligned with how your business grows.'
     },
@@ -424,7 +463,8 @@ export const faqs = [{
 
 export const footer = {
     blurb: 'Custom software, AI and dedicated engineering teams for ambitious businesses.',
-    columns: [{
+    columns: [
+        {
             title: 'Services',
             links: ['AI & ML', 'Web Development', 'Mobile Apps', 'UI/UX Design', 'DevOps & Cloud', 'QA Automation']
         },

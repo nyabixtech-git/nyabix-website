@@ -1,5 +1,5 @@
 .proof { position: relative; z-index: 2; margin-top: -90px; padding-bottom: 40px; }
-.proof__grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 22px; }
+.proof__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
 .proof__card {
   min-width: 0;
   background: #fff; border-radius: var(--radius-lg); padding: 30px;
@@ -51,8 +51,7 @@
 .badge:hover { transform: translateY(-4px) rotate(-6deg); border-color: var(--blue-400); }
 
 @media (max-width: 1080px) {
-  .proof__grid { grid-template-columns: 1fr 1fr; }
-  .proof__card--logos { grid-column: 1 / -1; }
+  .proof__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .proof { margin-top: -70px; }

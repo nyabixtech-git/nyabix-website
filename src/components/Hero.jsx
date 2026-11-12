@@ -41,9 +41,9 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <span className="hero__eyebrow anim" style={{ '--d': '0.1s' }}>
+          {/* <span className="hero__eyebrow anim" style={{ '--d': '0.1s' }}>
             <span className="hero__pulse" /> {hero.eyebrow}
-          </span>
+          </span> */}
           <h1 className="anim" style={{ '--d': '0.2s' }}>
             {hero.titleStart} <RotatingWord words={hero.rotatingWords} /> {hero.titleEnd}
           </h1>

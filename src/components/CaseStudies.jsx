@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { caseStudies } from '../data/content';
 import Reveal from './Reveal';
 import Icon from './Icon';
@@ -63,7 +64,7 @@ export default function CaseStudies() {
         onClickCapture={(e) => { if (drag.current.moved) { e.preventDefault(); e.stopPropagation(); } }}
       >
         {caseStudies.map((c, i) => (
-          <a href="#contact" className="case" key={c.title} style={{ '--hue': c.hue }} draggable="false">
+          <Link to={`/case-studies/${c.slug}`} className="case" key={c.slug} style={{ '--hue': c.hue }} draggable="false">
             <div className="case__media">
               <div className="case__mock">
                 <div className="case__mock-bar"><i /><i /><i /></div>
@@ -81,7 +82,7 @@ export default function CaseStudies() {
               <span className="case__link">View case study <Icon name="arrow" size={16} /></span>
             </div>
             <span className="case__num">0{i + 1}</span>
-          </a>
+          </Link>
         ))}
       </div>
 

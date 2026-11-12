@@ -33,6 +33,8 @@ const paths = {
   instagram: <><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></>,
   play: <path d="m7 4 13 8-13 8z" />,
   pause: <path d="M7 4h3v16H7zM14 4h3v16h-3z" />,
+  sap: <><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 12 12 17 22 12" /><polyline points="2 17 12 22 22 17" /></>,
+  sapAi: <><path d="M12 3 3 7.5v9L12 21l9-4.5v-9L12 3z" /><path d="M12 12l9-4.5M12 12v9M12 12 3 7.5" /><path d="M19 2v4M17 4h4" /></>,
 };
 
 export default function Icon({ name, size = 20, stroke = 2, fill = 'none', className = '', ...rest }) {
