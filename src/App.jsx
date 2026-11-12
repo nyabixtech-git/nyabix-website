@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/nyabix-website">
       <ScrollManager />
       <Navbar />
       <Routes>
