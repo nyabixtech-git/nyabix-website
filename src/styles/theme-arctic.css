@@ -1,0 +1,130 @@
+/* =====================================================================
+   NYABIX — "Arctic Light" theme
+   Light, airy backgrounds with the logo blues as the accent.
+   To go back to the dark theme, remove the import of this file in App.jsx.
+   ===================================================================== */
+:root {
+  --ice: #eaf4ff;
+  --ice-2: #f3f8ff;
+  --bg-soft: #f3f8ff;
+  --line: #e2ebf7;
+  --arctic-grad: linear-gradient(135deg, #eaf4ff 0%, #ffffff 60%, #f3f8ff 100%);
+  --soft-shadow: 0 24px 50px -24px rgba(7, 64, 160, .28);
+}
+
+/* Readable gradient text on light backgrounds */
+.v2-hl, .cs-hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ---------- Header ---------- */
+.hd-strip { background: linear-gradient(90deg, #eaf4ff, #dcecff); color: var(--ink); }
+.hd-strip p { color: var(--ink-2); }
+.hd-strip p b { color: var(--ink); }
+.hd-strip__link { color: var(--blue-600); }
+.hd-strip__x { background: rgba(7, 89, 214, .1); color: var(--ink); }
+.hd__cta { background: var(--grad); box-shadow: var(--shadow-blue); }
+.hd__cta::before { background: var(--navy-900); }
+
+/* ---------- Hero slider ---------- */
+.hs { background: var(--arctic-grad); color: var(--ink); }
+.hs__glow {
+  background:
+    radial-gradient(55% 70% at 80% 35%, hsl(var(--hue) 95% 70% / .35), transparent 70%),
+    radial-gradient(40% 50% at 0% 100%, rgba(7, 137, 255, .12), transparent 70%);
+}
+.hs__mesh { background-image: radial-gradient(rgba(7, 89, 214, .16) 1px, transparent 1px); }
+.hs__kicker { background: #fff; border-color: var(--line); color: var(--blue-600); box-shadow: 0 6px 16px -10px rgba(7, 64, 160, .35); }
+.hs__copy p { color: var(--ink-2); }
+.hs .btn--ghost, .cs-hero .btn--ghost { color: var(--ink); border-color: #c8d7ec; background: #fff; }
+.hs .btn--ghost:hover, .cs-hero .btn--ghost:hover { border-color: var(--blue-500); color: var(--blue-700); background: #fff; }
+.hs__dot { color: var(--ink-3); }
+.hs__dot.is-active, .hs__dot:hover { color: var(--ink); }
+.hs__dot i { background: #d5e3f5; }
+.hs__dot i b { background: var(--grad); }
+.hs__count { color: var(--ink-3); }
+.hs__count b { color: var(--ink); }
+.hs__arrows button { border-color: #c8d7ec; color: var(--ink); background: #fff; }
+.hs__arrows button:hover { background: var(--navy-900); border-color: var(--navy-900); color: #fff; }
+.art-chip { box-shadow: 0 20px 40px -18px rgba(4, 11, 36, .3); border: 1px solid var(--line); }
+.art-code, .art-phone, .art-win { box-shadow: 0 40px 70px -30px rgba(7, 40, 110, .45); }
+.art-ai__ring { border-color: rgba(7, 89, 214, .3); }
+.art-ai__ring--2 { border-color: rgba(7, 89, 214, .15); }
+.art-ai__node { background: var(--blue-500); box-shadow: 0 0 14px rgba(7, 137, 255, .6); }
+.art-ai__core { box-shadow: 0 30px 60px -20px hsl(var(--hue) 95% 45% / .6); }
+.art--team::before { border-color: rgba(7, 89, 214, .25); }
+.art-team__avatar { box-shadow: 0 14px 28px -12px rgba(7, 40, 110, .45); border: 1px solid var(--line); }
+
+/* ---------- AI band ---------- */
+.v2-ai__box { background: linear-gradient(135deg, #eaf4ff 0%, #ffffff 70%); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--soft-shadow); }
+.v2-ai__grid { background-image: linear-gradient(rgba(7, 89, 214, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(7, 89, 214, .07) 1px, transparent 1px); }
+.v2-ai__orb { background: radial-gradient(circle, rgba(7, 137, 255, .22), transparent 65%); }
+.v2-ai__kicker { color: var(--blue-600); }
+.v2-ai p { color: var(--ink-2); }
+.v2-ai__list li { background: #fff; border-color: var(--line); color: var(--ink); box-shadow: 0 8px 20px -14px rgba(7, 64, 160, .35); }
+.v2-ai__list li:hover { background: var(--ice); }
+.v2-ai__list svg { color: #12b76a; }
+
+/* ---------- Solutions + tech stack (was dark) ---------- */
+.v2-sol { background: var(--ice-2); color: var(--ink); }
+.v2-sol__glow { background: radial-gradient(50% 60% at 100% 0%, rgba(7, 137, 255, .12), transparent 70%); }
+.v2-sol__intro p { color: var(--ink-2); }
+.v2-sol__tile { background: #fff; border-color: var(--line); color: var(--ink); }
+.v2-sol__tile svg { color: var(--blue-600); }
+.v2-sol__tile:hover { background: var(--ice); border-color: var(--blue-300); }
+.v2-tech { background: #fff; border-color: var(--line); box-shadow: var(--soft-shadow); }
+.v2-tech__tabs { background: var(--ice-2); }
+.v2-tech__tabs button { color: var(--ink-2); }
+.v2-tech__tabs button:hover { color: var(--blue-700); }
+.v2-tech__tabs button.is-on { background: var(--grad); color: #fff; }
+.v2-tech__item { background: var(--ice-2); color: var(--ink); }
+.v2-tech__item span { color: #fff; }
+
+/* Reviews sits right after Solutions, so make it white for rhythm */
+#reviews.section--soft { background: #fff; }
+
+/* ---------- Contact (was dark) ---------- */
+.v2-contact { background: var(--arctic-grad); color: var(--ink); }
+.v2-contact::before { background: radial-gradient(circle, rgba(7, 137, 255, .14), transparent 60%); }
+.v2-contact__info > p { color: var(--ink-2); }
+.v2-contact__info li > span { background: #fff; color: var(--blue-600); border: 1px solid var(--line); }
+.v2-contact__info small { color: var(--ink-3); }
+.v2-contact__info a:hover { color: var(--blue-600); }
+.v2-contact__card { box-shadow: var(--soft-shadow); border: 1px solid var(--line); }
+
+/* ---------- Footer: soft navy to anchor the light page ---------- */
+.ft { background: #0b1430; }
+
+/* ---------- Case study pages ---------- */
+.cs-hero { background: var(--arctic-grad); color: var(--ink); }
+.cs-hero__grid { background-image: linear-gradient(rgba(7, 89, 214, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(7, 89, 214, .06) 1px, transparent 1px); }
+.cs-hero__orb { opacity: .22; }
+.cs-crumbs { color: var(--ink-3); }
+.cs-crumbs a:hover { color: var(--ink); }
+.cs-crumbs span { color: var(--blue-600); }
+.cs-tag { background: #fff; border-color: var(--line); color: var(--blue-600); }
+.cs-hero__summary { color: var(--ink-2); }
+.cs-hero__chip { border: 1px solid var(--line); box-shadow: var(--soft-shadow); }
+.cs-meta { background: #fff; border-color: var(--line); box-shadow: var(--soft-shadow); }
+.cs-meta div { border-left-color: var(--line) !important; border-top-color: var(--line) !important; }
+.cs-meta dt { color: var(--blue-600); }
+.cs-meta dd { color: var(--ink); }
+
+.cs-challenges { background: #fff; color: var(--ink); }
+.cs-challenges__glow { display: none; }
+.cs-split__intro p { color: var(--ink-2); }
+.cs-challenge-list li { background: var(--ice-2); border-color: var(--line); }
+.cs-challenge-list li.is-visible:hover { background: #fff; border-color: var(--blue-300); box-shadow: var(--soft-shadow); }
+.cs-challenge-list p { color: var(--ink-3); }
+.cs-challenge__num { color: rgba(7, 89, 214, .09); }
+
+.cs-results { background: var(--arctic-grad); color: var(--ink); }
+.cs-results__glow { display: none; }
+.cs-results__grid { background: var(--line); border-color: var(--line); box-shadow: var(--soft-shadow); }
+.cs-result { background: #fff; }
+.cs-result:hover { background: var(--ice-2); }
+.cs-result strong { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cs-result p { color: var(--ink-3); }
+.cs-impact__item > span { background: rgba(18, 183, 106, .12); color: #12b76a; }
+.cs-impact__item p { color: var(--ink-3); }
+
+/* Solid code card so it doesn't look washed out on the light hero */
+.art-code { background: #0b1430; border-color: #0b1430; }

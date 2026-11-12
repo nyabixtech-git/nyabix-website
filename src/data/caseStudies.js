@@ -7,159 +7,6 @@
 
 export const caseStudies = [
   {
-    slug: 'ap-automation-invoice-checking',
-    tag: 'Finance',
-    title: 'AP Automation – Checking Supplier Invoices Before They Get Paid',
-    body: 'AI-powered invoice validation that checks supplier invoices against SAP before approval.',
-    metric: '12',
-    metricLabel: 'automated SAP checks',
-    hue: 220,
-    visual: 'web',
-    client: 'Client Name',
-    services: ['AI Software Development'],
-    industry: 'Finance',
-    timeline: 'In Progress',
-    platforms: ['Web', 'SAP Integration'],
-    summary:
-      'An AI-powered accounts payable solution that reads supplier invoices, validates them against SAP, identifies discrepancies, and provides approvers with transparent evidence before any payment is approved.',
-
-    about: [
-      'Anyone working in accounts payable knows the challenge: invoices pile up, data is retyped manually, documents are checked against purchase orders, and teams hope that costly mistakes do not slip through.',
-      'NYABIX developed AP Automation to streamline this process. The platform reads supplier invoices, compares them against SAP records, performs validation checks, and presents clear evidence to approvers. AI accelerates the review process, while humans remain fully responsible for final approval decisions.',
-    ],
-
-    objectives: [
-      {
-        title: 'Look at Every Invoice',
-        body: 'Ensure every invoice is reviewed and validated before reaching the approval stage.',
-      },
-      {
-        title: 'Show Our Work',
-        body: 'Provide transparent evidence and explanations whenever discrepancies are detected.',
-      },
-      {
-        title: 'Keep People in Charge',
-        body: 'Use AI to assist decision-making while maintaining human control over approvals.',
-      },
-    ],
-
-
-    challenges: [
-      {
-        title: 'Disconnected Invoice and SAP Data',
-        body: 'Invoice information, supplier master data, purchase orders, and service entry records require cross-referencing across multiple SAP datasets, making verification complex and time-consuming.',
-      },
-      {
-        title: 'Complex Multi-Level Validation',
-        body: 'Validating supplier details, PO line items, account assignments, tax information, and service entries requires multiple checks that are difficult to coordinate consistently.',
-      },
-      {
-        title: 'Limited Context for Exception Handling',
-        body: 'When invoice data conflicts with SAP records or required information is missing, finance teams need to investigate manually to determine the appropriate next action.',
-      },
-    ],
-    solution: {
-      intro:
-        'We built an AI-powered invoice validation workflow that extracts invoice data, performs automated SAP checks, identifies duplicates and anomalies, and provides evidence-backed recommendations to approvers.',
-
-      features: [
-        {
-          title: 'Invoice Intelligence',
-          body: 'Automatically extracts invoice details, validates information, and identifies potential duplicate invoices.',
-          icon: 'ai',
-        },
-        {
-          title: 'SAP Validation Engine',
-          body: 'Performs 12 validation checks against SAP records, including purchase orders, suppliers, and banking information.',
-          icon: 'search',
-        },
-        {
-          title: 'Human Approval Workflow',
-          body: 'Approvers review AI findings, make final decisions, and maintain a complete audit trail of every action.',
-          icon: 'check',
-        },
-      ],
-    },
-
-    results: [
-      {
-        value: 12,
-        suffix: '',
-        label: 'automated SAP validation checks',
-      },
-      {
-        value: 31,
-        suffix: '',
-        label: 'sample invoices successfully tested',
-      },
-      {
-        value: 100,
-        suffix: '%',
-        label: 'payments require human approval',
-      },
-      {
-        value: 90,
-        suffix: ' day',
-        label: 'planned customer pilot program',
-      },
-    ],
-
-    impact: [
-      {
-        title: 'Reduced Manual Effort',
-        body: 'Finance teams spend significantly less time entering and checking invoice data.',
-      },
-      {
-        title: 'Greater Payment Confidence',
-        body: 'Approvers receive supporting evidence before making payment decisions.',
-      },
-      {
-        title: 'Lower Risk',
-        body: 'Duplicate invoices and validation issues can be identified before payment processing.',
-      },
-      {
-        title: 'Audit-Ready Process',
-        body: 'Every review, recommendation, and approval decision is fully documented.',
-      },
-    ],
-
-    tech: [
-      {
-        category: 'AI & Automation',
-        items: [
-          { name: 'OCR', desc: 'Invoice data extraction' },
-          { name: 'LLM', desc: 'Invoice analysis and recommendations' },
-        ],
-      },
-      {
-        category: 'Backend',
-        items: [
-          { name: 'Python', desc: 'Automation workflows' },
-          { name: 'FastAPI', desc: 'Application services' },
-        ],
-      },
-      {
-        category: 'Enterprise Integration',
-        items: [
-          { name: 'SAP', desc: 'Invoice and procurement validation' },
-        ],
-      },
-      {
-        category: 'Frontend',
-        items: [
-          { name: 'React', desc: 'Approver dashboard' },
-        ],
-      },
-    ],
-
-    testimonial: {
-      quote:
-        'AP Automation gives our finance team the confidence to review invoices faster while maintaining complete control over payment decisions.',
-      name: 'Finance Director',
-      role: 'Saudi Cargo',
-    },
-  },
-  {
     slug: 'patient-portal-platform',
     tag: 'Healthcare',
     title: 'Patient Portal Platform',
@@ -209,22 +56,10 @@ export const caseStudies = [
       { title: 'Ready to scale', body: 'New clinics are onboarded in days, not weeks.' },
     ],
     tech: [
-      {
-        category: 'Frontend', items: [
-          { name: 'React', desc: 'Web portal UI' }, { name: 'React Native', desc: 'iOS & Android apps' }]
-      },
-      {
-        category: 'Backend', items: [
-          { name: 'Node.js', desc: 'API & integration layer' }, { name: 'PostgreSQL', desc: 'Primary database' }]
-      },
-      {
-        category: 'Cloud & DevOps', items: [
-          { name: 'AWS', desc: 'Hosting & storage' }, { name: 'Docker', desc: 'Containerised services' }]
-      },
-      {
-        category: 'Design', items: [
-          { name: 'Figma', desc: 'UX flows & UI design' }]
-      },
+      { category: 'Frontend', items: [{ name: 'React', desc: 'Web portal UI' }, { name: 'React Native', desc: 'iOS & Android apps' }] },
+      { category: 'Backend', items: [{ name: 'Node.js', desc: 'API & integration layer' }, { name: 'PostgreSQL', desc: 'Primary database' }] },
+      { category: 'Cloud & DevOps', items: [{ name: 'AWS', desc: 'Hosting & storage' }, { name: 'Docker', desc: 'Containerised services' }] },
+      { category: 'Design', items: [{ name: 'Figma', desc: 'UX flows & UI design' }] },
     ],
     testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
   },
@@ -278,22 +113,10 @@ export const caseStudies = [
       { title: 'Room to grow', body: 'The system scales with transaction volume.' },
     ],
     tech: [
-      {
-        category: 'Frontend', items: [
-          { name: 'React', desc: 'Dashboard UI' }, { name: 'TypeScript', desc: 'Type-safe code' }]
-      },
-      {
-        category: 'Backend', items: [
-          { name: 'Node.js', desc: 'Event services' }, { name: 'Kafka', desc: 'Event streaming' }, { name: 'PostgreSQL', desc: 'Ledger data' }]
-      },
-      {
-        category: 'Cloud & DevOps', items: [
-          { name: 'AWS', desc: 'Infrastructure' }, { name: 'Terraform', desc: 'Infrastructure as code' }]
-      },
-      {
-        category: 'Testing', items: [
-          { name: 'Playwright', desc: 'End-to-end tests' }]
-      },
+      { category: 'Frontend', items: [{ name: 'React', desc: 'Dashboard UI' }, { name: 'TypeScript', desc: 'Type-safe code' }] },
+      { category: 'Backend', items: [{ name: 'Node.js', desc: 'Event services' }, { name: 'Kafka', desc: 'Event streaming' }, { name: 'PostgreSQL', desc: 'Ledger data' }] },
+      { category: 'Cloud & DevOps', items: [{ name: 'AWS', desc: 'Infrastructure' }, { name: 'Terraform', desc: 'Infrastructure as code' }] },
+      { category: 'Testing', items: [{ name: 'Playwright', desc: 'End-to-end tests' }] },
     ],
     testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
   },
@@ -347,22 +170,10 @@ export const caseStudies = [
       { title: 'New revenue', body: 'Paid courses and subscriptions launched in-app.' },
     ],
     tech: [
-      {
-        category: 'Mobile', items: [
-          { name: 'Flutter', desc: 'iOS & Android app' }]
-      },
-      {
-        category: 'Backend', items: [
-          { name: 'Django', desc: 'API & admin' }, { name: 'PostgreSQL', desc: 'Database' }, { name: 'Redis', desc: 'Caching & queues' }]
-      },
-      {
-        category: 'Media', items: [
-          { name: 'WebRTC', desc: 'Live classes' }, { name: 'HLS', desc: 'Adaptive video' }]
-      },
-      {
-        category: 'Design', items: [
-          { name: 'Figma', desc: 'UI & prototyping' }]
-      },
+      { category: 'Mobile', items: [{ name: 'Flutter', desc: 'iOS & Android app' }] },
+      { category: 'Backend', items: [{ name: 'Django', desc: 'API & admin' }, { name: 'PostgreSQL', desc: 'Database' }, { name: 'Redis', desc: 'Caching & queues' }] },
+      { category: 'Media', items: [{ name: 'WebRTC', desc: 'Live classes' }, { name: 'HLS', desc: 'Adaptive video' }] },
+      { category: 'Design', items: [{ name: 'Figma', desc: 'UI & prototyping' }] },
     ],
     testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
   },
@@ -416,22 +227,10 @@ export const caseStudies = [
       { title: 'Data for decisions', body: 'Reports show driver and route performance.' },
     ],
     tech: [
-      {
-        category: 'Frontend', items: [
-          { name: 'React', desc: 'Dispatcher dashboard' }, { name: 'Mapbox', desc: 'Live maps' }]
-      },
-      {
-        category: 'Mobile', items: [
-          { name: 'Kotlin', desc: 'Android driver app' }]
-      },
-      {
-        category: 'Backend', items: [
-          { name: 'Go', desc: 'GPS ingestion' }, { name: 'PostGIS', desc: 'Geo data' }]
-      },
-      {
-        category: 'Cloud & DevOps', items: [
-          { name: 'GCP', desc: 'Hosting' }, { name: 'Kubernetes', desc: 'Service orchestration' }]
-      },
+      { category: 'Frontend', items: [{ name: 'React', desc: 'Dispatcher dashboard' }, { name: 'Mapbox', desc: 'Live maps' }] },
+      { category: 'Mobile', items: [{ name: 'Kotlin', desc: 'Android driver app' }] },
+      { category: 'Backend', items: [{ name: 'Go', desc: 'GPS ingestion' }, { name: 'PostGIS', desc: 'Geo data' }] },
+      { category: 'Cloud & DevOps', items: [{ name: 'GCP', desc: 'Hosting' }, { name: 'Kubernetes', desc: 'Service orchestration' }] },
     ],
     testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
   },
@@ -485,22 +284,10 @@ export const caseStudies = [
       { title: 'Easy to extend', body: 'New document types are added in days.' },
     ],
     tech: [
-      {
-        category: 'AI & ML', items: [
-          { name: 'Python', desc: 'ML pipeline' }, { name: 'LLM API', desc: 'Summaries & extraction' }, { name: 'OCR', desc: 'Text from scans' }]
-      },
-      {
-        category: 'Frontend', items: [
-          { name: 'React', desc: 'Review workspace' }]
-      },
-      {
-        category: 'Backend', items: [
-          { name: 'FastAPI', desc: 'Model services' }, { name: 'PostgreSQL', desc: 'Results store' }]
-      },
-      {
-        category: 'Cloud', items: [
-          { name: 'Azure', desc: 'Private deployment' }]
-      },
+      { category: 'AI & ML', items: [{ name: 'Python', desc: 'ML pipeline' }, { name: 'LLM API', desc: 'Summaries & extraction' }, { name: 'OCR', desc: 'Text from scans' }] },
+      { category: 'Frontend', items: [{ name: 'React', desc: 'Review workspace' }] },
+      { category: 'Backend', items: [{ name: 'FastAPI', desc: 'Model services' }, { name: 'PostgreSQL', desc: 'Results store' }] },
+      { category: 'Cloud', items: [{ name: 'Azure', desc: 'Private deployment' }] },
     ],
     testimonial: { quote: 'Add a real quote from this client about the project and its results.', name: 'Client Name', role: 'Role, Company' },
   },

@@ -1,0 +1,29 @@
+.pp { position: fixed; inset: 0; z-index: 200; visibility: hidden; transition: visibility 0s .5s; }
+.pp.is-open { visibility: visible; transition: none; }
+.pp__backdrop { position: absolute; inset: 0; background: rgba(4, 11, 36, .55); backdrop-filter: blur(4px); opacity: 0; transition: opacity .4s; }
+.pp.is-open .pp__backdrop { opacity: 1; }
+.pp__panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(500px, 100%);
+  background: #fff; padding: 46px 40px; overflow-y: auto;
+  transform: translateX(100%); transition: transform .5s var(--ease);
+  box-shadow: -30px 0 60px -20px rgba(4,11,36,.4);
+}
+.pp.is-open .pp__panel { transform: none; }
+.pp__close { position: absolute; top: 18px; right: 18px; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); transition: transform .35s var(--ease), background .3s; }
+.pp__close:hover { transform: rotate(90deg); background: var(--bg-soft); }
+.pp__panel h3 { font-size: 30px; font-weight: 800; }
+.pp__sub { margin: 10px 0 24px; color: var(--ink-3); }
+.pp__panel form { display: grid; gap: 14px; }
+.pp__chips p { font-size: 14px; font-weight: 700; color: var(--ink-2); margin-bottom: 8px; }
+.pp__chips div { display: flex; flex-wrap: wrap; gap: 8px; }
+.pp__chips button { padding: 8px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; font-weight: 600; font-size: 13.5px; color: var(--ink-2); transition: all .25s; }
+.pp__chips button.is-on { background: var(--grad); color: #fff; border-color: transparent; }
+.pp__consent { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--ink-3); }
+.pp__consent input { margin-top: 3px; accent-color: var(--blue-600); }
+.pp__alt { margin-top: 20px; font-size: 14px; color: var(--ink-3); text-align: center; }
+.pp__alt a { color: var(--blue-600); font-weight: 700; }
+.pp__done { text-align: center; padding-top: 80px; }
+.pp__done > span { display: inline-grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; background: var(--grad); color: #fff; animation: icon-pop .7s var(--ease) both; }
+.pp__done h3 { margin-top: 20px; }
+.pp__done p { margin: 10px 0 24px; color: var(--ink-3); }
+@media (max-width: 600px) { .pp__panel { padding: 64px 20px 30px; } }
