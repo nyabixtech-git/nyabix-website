@@ -1,7 +1,7 @@
 .hs {
   position: relative; overflow: hidden; color: #fff;
   background: var(--navy-900);
-  padding: 70px 0 34px;
+  /* padding: 70px 0 34px; */
 }
 .hs__bg { position: absolute; inset: 0; pointer-events: none; }
 .hs__glow {

@@ -140,18 +140,33 @@ export const clientsV2 = ['Lumora', 'Kestrel', 'Orbitly', 'Fernway', 'Quantix', 
 export const locations = ['Pakistan', 'United States', 'United Kingdom', 'UAE', 'Saudi Arabia', 'Canada', 'Australia'];
 
 export const footerV2 = [
-  { title: 'Services', links: [
-    { label: 'AI & ML', href: '#services' }, { label: 'Web Development', href: '#services' },
-    { label: 'Mobile Apps', href: '#services' }, { label: 'UI/UX Design', href: '#services' },
-    { label: 'DevOps & Cloud', href: '#services' },
-  ] },
-  { title: 'Industries', links: [
-    { label: 'Healthcare', href: '#industries' }, { label: 'Fintech', href: '#industries' },
-    { label: 'Education', href: '#industries' }, { label: 'Logistics', href: '#industries' },
-    { label: 'E-commerce', href: '#industries' },
-  ] },
-  { title: 'Company', links: [
-    { label: 'About Us', href: '#about' }, { label: 'Case Studies', href: '#work' },
-    { label: 'Reviews', href: '#reviews' }, { label: 'Contact', href: '#contact' },
-  ] },
+  {
+    title: 'Services',
+    links: [
+      { label: 'AI & ML', href: '#services' },
+      { label: 'Web Development', href: '#services' },
+      { label: 'Mobile Apps', href: '#services' },
+      { label: 'UI/UX Design', href: '#services' },
+      { label: 'DevOps & Cloud', href: '#services' },
+    ]
+  },
+  {
+    title: 'Industries',
+    links: [
+      { label: 'Healthcare', href: '#industries' },
+      { label: 'Fintech', href: '#industries' },
+      { label: 'Education', href: '#industries' },
+      { label: 'Logistics', href: '#industries' },
+      { label: 'E-commerce', href: '#industries' },
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '#about' },
+      { label: 'Case Studies', href: '#work' },
+      { label: 'Reviews', href: '#reviews' },
+      { label: 'Contact', href: '#contact' },
+    ]
+  },
 ];

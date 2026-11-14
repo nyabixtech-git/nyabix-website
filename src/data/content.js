@@ -5,12 +5,13 @@
 ------------------------------------------------------------------- */
 
 export const company = {
-  name: 'NYABIX',
-  phone: '+92 300 000 0000',          // TODO: your phone number
-  phoneHref: 'tel:+923000000000',
-  email: 'hello@nyabix.com',          // TODO: your email
-  address: 'Karachi, Pakistan',       // TODO: your address
-  bookingUrl: '#contact',             // TODO: Calendly or booking link
+  name: 'NYABIX Solutions',
+  phone: '+92 300 1(NYABIX)',
+  phoneHref: 'tel:+923001692249',
+  email: 'nyabix.tech@gmail.com',
+  address: '1st Floor, 463-B, Block B, Adamjee Nagar Society, Karachi, Pakistan',
+  bookingUrl: '#contact',
+  website: 'https://www.nyabix.com',
 };
 
 export const navLinks = [

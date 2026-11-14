@@ -14,7 +14,7 @@ export default function Home() {
       <HeroSlider />
       <AboutStrip />
       <ServicesGrid />
-      <AiBand />
+      {/* <AiBand /> */}
       <Industries />
       <Work />
       <Clients />

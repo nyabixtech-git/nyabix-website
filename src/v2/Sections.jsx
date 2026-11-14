@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
+import { technologies, techCategories, getTechByCategory } from '../helpers/techStack';
 import { servicesV2, industries, solutions, techStack, clientsV2, aiBanner } from '../data/homeV2';
 import { caseStudies, testimonials, company } from '../data/content';
 import Reveal from '../components/Reveal';
@@ -8,6 +10,8 @@ import SectionLink from '../components/SectionLink';
 import '../components/Contact.css';
 import './ProposalPanel.css';
 import './Sections.css';
+
+const tabs = techCategories;
 
 /* ---------------- About strip ---------------- */
 export function AboutStrip() {
@@ -201,8 +205,9 @@ export function Clients() {
 
 /* ---------------- Solutions + tech stack ---------------- */
 export function SolutionsTech() {
-  const tabs = Object.keys(techStack);
+
   const [tab, setTab] = useState(tabs[0]);
+
   return (
     <section className="section section--dark v2-sol" id="solutions">
       <div className="v2-sol__glow" aria-hidden="true" />
@@ -229,15 +234,31 @@ export function SolutionsTech() {
             <h3>Our Tech Stack</h3>
             <div className="v2-tech__tabs" role="tablist">
               {tabs.map((t) => (
-                <button key={t} role="tab" aria-selected={t === tab} className={t === tab ? 'is-on' : ''} onClick={() => setTab(t)}>{t}</button>
+                <button
+                  key={t}
+                  role="tab"
+                  aria-selected={t === tab}
+                  className={t === tab ? 'is-on' : ''}
+                  onClick={() => setTab(t)}
+                >
+                  {t}
+                </button>
               ))}
             </div>
           </div>
           <div className="v2-tech__grid" key={tab}>
-            {techStack[tab].map((name, i) => (
-              <div className="v2-tech__item" key={name} style={{ '--i': i }}>
-                <span>{name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2)}</span>
-                {name}
+            {getTechByCategory(tab).map((tech, i) => (
+              <div
+                className="v2-tech__item"
+                key={tech.name}
+                style={{ '--i': i }}
+              >
+                <img
+                  src={tech.logo}
+                  alt={`${tech.name} logo`}
+                  loading="lazy"
+                />
+                {tech.name}
               </div>
             ))}
           </div>
@@ -248,63 +269,237 @@ export function SolutionsTech() {
 }
 
 /* ---------------- Reviews carousel ---------------- */
-export function Reviews() {
-  const [i, setI] = useState(0);
-  const [perView, setPerView] = useState(3);
-  const max = Math.max(0, testimonials.length - perView);
+// export function Reviews() {
+//   const [i, setI] = useState(0);
+//   const [perView, setPerView] = useState(3);
+//   const max = Math.max(0, testimonials.length - perView);
 
-  useEffect(() => {
-    const onResize = () => setPerView(window.innerWidth < 700 ? 1 : window.innerWidth < 1060 ? 2 : 3);
-    onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
-  useEffect(() => { if (i > max) setI(max); }, [max, i]);
-  useEffect(() => {
-    const t = setTimeout(() => setI((n) => (n >= max ? 0 : n + 1)), 5000);
-    return () => clearTimeout(t);
-  }, [i, max]);
+//   useEffect(() => {
+//     const onResize = () => setPerView(window.innerWidth < 700 ? 1 : window.innerWidth < 1060 ? 2 : 3);
+//     onResize();
+//     window.addEventListener('resize', onResize);
+//     return () => window.removeEventListener('resize', onResize);
+//   }, []);
+//   useEffect(() => { if (i > max) setI(max); }, [max, i]);
+//   useEffect(() => {
+//     const t = setTimeout(() => setI((n) => (n >= max ? 0 : n + 1)), 5000);
+//     return () => clearTimeout(t);
+//   }, [i, max]);
+
+//   return (
+//     <section className="section section--soft" id="reviews">
+//       <div className="container">
+//         <div className="v2-head">
+//           <Reveal variant="left">
+//             <span className="eyebrow">Ratings & Reviews</span>
+//             <h2 className="v2-h2">What our <span className="grad-text">clients say</span></h2>
+//           </Reveal>
+//           <Reveal variant="right" className="v2-rev__nav">
+//             <button onClick={() => setI(i <= 0 ? max : i - 1)} aria-label="Previous review"><Icon name="arrowLeft" size={20} /></button>
+//             <button onClick={() => setI(i >= max ? 0 : i + 1)} aria-label="Next review"><Icon name="arrow" size={20} /></button>
+//           </Reveal>
+//         </div>
+//         <div className="v2-rev__viewport">
+//           <div className="v2-rev__track" style={{ '--per': perView, transform: `translateX(calc(${-i} * (100% + 24px) / var(--per)))` }}>
+//             {testimonials.map((t, n) => (
+//               <figure className="v2-rev" key={n}>
+//                 <div className="v2-rev__stars">{Array.from({ length: 5 }).map((_, k) => <Icon key={k} name="star" size={16} fill="currentColor" stroke={0} />)}</div>
+//                 <blockquote>{t.text}</blockquote>
+//                 <figcaption>
+//                   <span className="avatar">{t.initials}</span>
+//                   <div><strong>{t.name}</strong><small>{t.role}</small></div>
+//                 </figcaption>
+//               </figure>
+//             ))}
+//           </div>
+//         </div>
+//         <div className="v2-rev__dots">
+//           {Array.from({ length: max + 1 }).map((_, n) => (
+//             <button key={n} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={`Go to review ${n + 1}`} />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+export function Reviews() {
+  const clients = [
+    {
+      name: "PARCO",
+      logo: "/parco-logo.png",
+      style: { width: "155px", height: "65px" },
+    },
+    {
+      name: "Pakistan State Oil",
+      logo: "/pso-logo.png",
+      style: { width: "150px", height: "65px" },
+    },
+    {
+      name: "Saudi Cargo",
+      logo: "/saudi-cargo-logo.svg.webp",
+      style: { width: "170px", height: "75px" },
+    },
+    {
+      name: "Indus Motors (IMC)",
+      logo: "/indus-motors-logo.jfif",
+      style: { width: "145px", height: "70px" },
+    },
+    {
+      name: "Moonshot Technologies",
+      logo: "/moonshot-logo.webp",
+      style: { width: "195px", height: "90px" },
+    },
+  ];
 
   return (
-    <section className="section section--soft" id="reviews">
+    <section className="section clients-section" id="clients">
       <div className="container">
-        <div className="v2-head">
+
+        <div className="v2-head clients-heading">
           <Reveal variant="left">
-            <span className="eyebrow">Ratings & Reviews</span>
-            <h2 className="v2-h2">What our <span className="grad-text">clients say</span></h2>
-          </Reveal>
-          <Reveal variant="right" className="v2-rev__nav">
-            <button onClick={() => setI(i <= 0 ? max : i - 1)} aria-label="Previous review"><Icon name="arrowLeft" size={20} /></button>
-            <button onClick={() => setI(i >= max ? 0 : i + 1)} aria-label="Next review"><Icon name="arrow" size={20} /></button>
+            <span className="eyebrow">Our Clients</span>
+            <h2 className="v2-h2">
+              Trusted by <span className="grad-text">Industry Leaders</span>
+            </h2>
+            <p>
+              Building meaningful partnerships through technology,
+              innovation, and reliable digital solutions.
+            </p>
           </Reveal>
         </div>
-        <div className="v2-rev__viewport">
-          <div className="v2-rev__track" style={{ '--per': perView, transform: `translateX(calc(${-i} * (100% + 24px) / var(--per)))` }}>
-            {testimonials.map((t, n) => (
-              <figure className="v2-rev" key={n}>
-                <div className="v2-rev__stars">{Array.from({ length: 5 }).map((_, k) => <Icon key={k} name="star" size={16} fill="currentColor" stroke={0} />)}</div>
-                <blockquote>{t.text}</blockquote>
-                <figcaption>
-                  <span className="avatar">{t.initials}</span>
-                  <div><strong>{t.name}</strong><small>{t.role}</small></div>
-                </figcaption>
-              </figure>
+
+        <div className="clients-marquee">
+          <div className="clients-track">
+
+            {[1, 2].map((group) => (
+              <div
+                className="clients-group"
+                key={group}
+                aria-hidden={group === 2 ? "true" : undefined}
+              >
+                {clients.map((client) => (
+                  <div className="clients-logo" key={client.name}>
+                    <img
+                      src={client.logo}
+                      alt={group === 1 ? client.name : ""}
+                      loading="lazy"
+                      style={{
+                        ...client.style,
+                        objectFit: "contain",
+                        display: "block",
+                        filter: "none",
+                        opacity: 1,
+                        transition: "transform 0.3s ease, filter 0.3s ease",
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
             ))}
+
           </div>
         </div>
-        <div className="v2-rev__dots">
-          {Array.from({ length: max + 1 }).map((_, n) => (
-            <button key={n} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={`Go to review ${n + 1}`} />
-          ))}
+
+        <div className="clients-bottom">
+          <span>Partnerships built on trust and excellence.</span>
         </div>
+
       </div>
     </section>
   );
 }
 
+
 /* ---------------- Contact band ---------------- */
+// export function ContactBand() {
+//   const [sent, setSent] = useState(false);
+//   return (
+//     <section className="v2-contact" id="contact">
+//       <div className="container v2-contact__grid">
+//         <Reveal variant="left" className="v2-contact__info">
+//           <span className="eyebrow">Contact Us</span>
+//           <h2 className="v2-h2">Let's talk about your <span className="v2-hl">next project</span></h2>
+//           <p>Share your idea and get a free consultation, estimate and timeline from our team.</p>
+//           <ul>
+//             <li><span><Icon name="pin" size={18} /></span><div><small>Headquarters</small>{company.address}</div></li>
+//             <li><span><Icon name="phone" size={18} /></span><div><small>Call us</small><a href={company.phoneHref}>{company.phone}</a></div></li>
+//             <li><span><Icon name="mail" size={18} /></span><div><small>Email</small><a href={`mailto:${company.email}`}>{company.email}</a></div></li>
+//           </ul>
+//         </Reveal>
+//         <Reveal variant="right" className="v2-contact__card">
+//           {sent ? (
+//             <div className="v2-contact__done">
+//               <span><Icon name="check" size={32} stroke={3} /></span>
+//               <h3>Thank you!</h3>
+//               <p>We'll get back to you within one business day.</p>
+//               <button className="btn btn--outline" onClick={() => setSent(false)}>Send another</button>
+//             </div>
+//           ) : (
+//             /* TODO: connect onSubmit to your backend / Formspree / EmailJS */
+//             <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+//               <h3>Request a FREE Proposal</h3>
+//               <div className="field-row">
+//                 <label className="field"><input required placeholder=" " /><span>Full name</span></label>
+//                 <label className="field"><input required type="email" placeholder=" " /><span>Email</span></label>
+//               </div>
+//               <div className="field-row">
+//                 <label className="field"><input type="tel" placeholder=" " /><span>Phone</span></label>
+//                 <label className="field"><input placeholder=" " /><span>Company</span></label>
+//               </div>
+//               <label className="field"><textarea rows={4} required placeholder=" " /><span>Tell us about your project</span></label>
+//               <label className="pp__consent"><input type="checkbox" required /> I agree to be contacted about my request.</label>
+//               <button className="btn btn--primary" type="submit">Submit <Icon name="arrow" size={18} /></button>
+//             </form>
+//           )}
+//         </Reveal>
+//       </div>
+//     </section>
+//   );
+// }
+
 export function ContactBand() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const companyName = formData.get('company');
+
+    const templateParams = {
+      from_name: formData.get('from_name'),
+      from_email: formData.get('from_email'),
+      phone: formData.get('phone') || 'Not provided',
+      services: companyName ? `Company: ${companyName}` : 'General Contact Form',
+      message: formData.get('message') || 'No project details provided',
+      to_email: 'nyabix.tech@gmail.com',
+    };
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setSent(true);
+      form.reset();
+    } catch (err) {
+      console.error('Email sending failed:', err);
+      setError('Unable to send your request. Please try again or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="v2-contact" id="contact">
       <div className="container v2-contact__grid">
@@ -327,20 +522,22 @@ export function ContactBand() {
               <button className="btn btn--outline" onClick={() => setSent(false)}>Send another</button>
             </div>
           ) : (
-            /* TODO: connect onSubmit to your backend / Formspree / EmailJS */
-            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+            <form onSubmit={handleSubmit}>
               <h3>Request a FREE Proposal</h3>
               <div className="field-row">
-                <label className="field"><input required placeholder=" " /><span>Full name</span></label>
-                <label className="field"><input required type="email" placeholder=" " /><span>Email</span></label>
+                <label className="field"><input name="from_name" required placeholder=" " /><span>Full name</span></label>
+                <label className="field"><input name="from_email" required type="email" placeholder=" " /><span>Email</span></label>
               </div>
               <div className="field-row">
-                <label className="field"><input type="tel" placeholder=" " /><span>Phone</span></label>
-                <label className="field"><input placeholder=" " /><span>Company</span></label>
+                <label className="field"><input name="phone" type="tel" placeholder=" " /><span>Phone</span></label>
+                <label className="field"><input name="company" placeholder=" " /><span>Company</span></label>
               </div>
-              <label className="field"><textarea rows={4} required placeholder=" " /><span>Tell us about your project</span></label>
+              <label className="field"><textarea name="message" rows={4} required placeholder=" " /><span>Tell us about your project</span></label>
               <label className="pp__consent"><input type="checkbox" required /> I agree to be contacted about my request.</label>
-              <button className="btn btn--primary" type="submit">Submit <Icon name="arrow" size={18} /></button>
+              {error && <p role="alert" className="pp__error">{error}</p>}
+              <button className="btn btn--primary" type="submit" disabled={loading}>
+                {loading ? 'Sending...' : 'Submit'} {!loading && <Icon name="arrow" size={18} />}
+              </button>
             </form>
           )}
         </Reveal>

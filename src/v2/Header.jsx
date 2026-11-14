@@ -38,7 +38,7 @@ export default function Header() {
     <>
       <header className={`hd ${scrolled ? 'hd--scrolled' : ''}`}>
         {/* Top AI strip */}
-        {!stripClosed && (
+        {/* {!stripClosed && (
           <div className="hd-strip">
             <div className="container hd-strip__inner">
               <span className="hd-strip__badge">AI</span>
@@ -47,7 +47,7 @@ export default function Header() {
               <button className="hd-strip__x" onClick={() => setStripClosed(true)} aria-label="Close banner"><Icon name="close" size={14} /></button>
             </div>
           </div>
-        )}
+        )} */}
 
         <div className="container hd__bar">
           <Link to="/" className="hd__logo" onClick={onLogo} aria-label="NYABIX home">
