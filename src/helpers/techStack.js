@@ -12,12 +12,12 @@ export const technologies = [
     { name: 'Tailwind CSS', category: 'Frontend', logo: icon('tailwindcss') },
 
     // Mobile
-    { name: 'React Native', category: 'Mobile', logo: icon('react') },
     { name: 'Flutter', category: 'Mobile', logo: icon('flutter') },
     { name: 'Swift', category: 'Mobile', logo: icon('swift') },
     { name: 'Kotlin', category: 'Mobile', logo: icon('kotlin') },
     { name: 'Expo', category: 'Mobile', logo: icon('expo') },
     { name: 'Firebase', category: 'Mobile', logo: icon('firebase') },
+    { name: 'React Native', category: 'Mobile', logo: icon('react') },
 
     // Backend
     { name: 'Node.js', category: 'Backend', logo: icon('nodedotjs') },
