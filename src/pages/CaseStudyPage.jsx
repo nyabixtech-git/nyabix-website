@@ -272,17 +272,19 @@ function CaseStudyContent({ slug }) {
       {/* ============ TESTIMONIAL ============ */}
       <section className="section cs-quote-wrap">
         <div className="container">
-          <Reveal className="cs-quote" variant="zoom">
-            <span className="cs-quote__mark" aria-hidden="true">“</span>
-            <div className="cs-quote__stars" aria-label="5 out of 5 stars">
-              {Array.from({ length: 5 }).map((_, i) => <Icon key={i} name="star" size={20} fill="currentColor" stroke={0} />)}
-            </div>
-            <blockquote>{cs.testimonial.quote}</blockquote>
-            <div className="cs-quote__by">
-              <span className="avatar">{cs.testimonial.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>
-              <div><strong>{cs.testimonial.name}</strong><small>{cs.testimonial.role}</small></div>
-            </div>
-          </Reveal>
+          {cs?.testimonial && (
+            <Reveal className="cs-quote" variant="zoom">
+              <span className="cs-quote__mark" aria-hidden="true">“</span>
+              <div className="cs-quote__stars" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map((_, i) => <Icon key={i} name="star" size={20} fill="currentColor" stroke={0} />)}
+              </div>
+              <blockquote>{cs.testimonial.quote}</blockquote>
+              <div className="cs-quote__by">
+                <span className="avatar">{cs.testimonial.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>
+                <div><strong>{cs.testimonial.name}</strong><small>{cs.testimonial.role}</small></div>
+              </div>
+            </Reveal>
+          )}
 
           <nav className="cs-pager" aria-label="More case studies">
             <Link to={`/case-studies/${prev.slug}`} className="cs-pager__link">
