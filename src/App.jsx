@@ -10,7 +10,7 @@ import './styles/theme-arctic.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/nyabixwebsite">
       <ScrollManager />
       <Header />
       <Routes>
