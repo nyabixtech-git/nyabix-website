@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/nyabixwebsite/', // Replace with your exact repository name
+  base: '/nyabix-website/', // Replace with your exact repository name
 });
