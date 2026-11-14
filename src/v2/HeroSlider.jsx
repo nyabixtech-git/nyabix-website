@@ -118,7 +118,15 @@ export default function HeroSlider() {
                 <SectionLink href="#work" className="btn btn--ghost" tabIndex={i === index ? 0 : -1}>See Our Work</SectionLink>
               </div>
             </div>
-            <div className="hs__art"><Art type={s.art} /></div>
+            <div className="hs__art">
+              {s.photo ? (
+                <div className="hs__handphone">
+                  <img src={s.photo} alt="Mobile app shown on a phone held in hand" loading={i === 0 ? 'eager' : 'lazy'} />
+                </div>
+              ) : (
+                <Art type={s.art} />
+              )}
+            </div>
           </div>
         ))}
       </div>

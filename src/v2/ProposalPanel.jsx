@@ -6,7 +6,6 @@ import './ProposalPanel.css';
 
 const services = ['AI / ML', 'Web App', 'Mobile App', 'UI/UX', 'DevOps', 'Other'];
 
-/** Slide-in "Request a Free Proposal" form, opened from the header */
 export default function ProposalPanel({ open, onClose }) {
   const [picked, setPicked] = useState(['Web App']);
   const [sent, setSent] = useState(false);

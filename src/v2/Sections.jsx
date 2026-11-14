@@ -269,60 +269,6 @@ export function SolutionsTech() {
 }
 
 /* ---------------- Reviews carousel ---------------- */
-// export function Reviews() {
-//   const [i, setI] = useState(0);
-//   const [perView, setPerView] = useState(3);
-//   const max = Math.max(0, testimonials.length - perView);
-
-//   useEffect(() => {
-//     const onResize = () => setPerView(window.innerWidth < 700 ? 1 : window.innerWidth < 1060 ? 2 : 3);
-//     onResize();
-//     window.addEventListener('resize', onResize);
-//     return () => window.removeEventListener('resize', onResize);
-//   }, []);
-//   useEffect(() => { if (i > max) setI(max); }, [max, i]);
-//   useEffect(() => {
-//     const t = setTimeout(() => setI((n) => (n >= max ? 0 : n + 1)), 5000);
-//     return () => clearTimeout(t);
-//   }, [i, max]);
-
-//   return (
-//     <section className="section section--soft" id="reviews">
-//       <div className="container">
-//         <div className="v2-head">
-//           <Reveal variant="left">
-//             <span className="eyebrow">Ratings & Reviews</span>
-//             <h2 className="v2-h2">What our <span className="grad-text">clients say</span></h2>
-//           </Reveal>
-//           <Reveal variant="right" className="v2-rev__nav">
-//             <button onClick={() => setI(i <= 0 ? max : i - 1)} aria-label="Previous review"><Icon name="arrowLeft" size={20} /></button>
-//             <button onClick={() => setI(i >= max ? 0 : i + 1)} aria-label="Next review"><Icon name="arrow" size={20} /></button>
-//           </Reveal>
-//         </div>
-//         <div className="v2-rev__viewport">
-//           <div className="v2-rev__track" style={{ '--per': perView, transform: `translateX(calc(${-i} * (100% + 24px) / var(--per)))` }}>
-//             {testimonials.map((t, n) => (
-//               <figure className="v2-rev" key={n}>
-//                 <div className="v2-rev__stars">{Array.from({ length: 5 }).map((_, k) => <Icon key={k} name="star" size={16} fill="currentColor" stroke={0} />)}</div>
-//                 <blockquote>{t.text}</blockquote>
-//                 <figcaption>
-//                   <span className="avatar">{t.initials}</span>
-//                   <div><strong>{t.name}</strong><small>{t.role}</small></div>
-//                 </figcaption>
-//               </figure>
-//             ))}
-//           </div>
-//         </div>
-//         <div className="v2-rev__dots">
-//           {Array.from({ length: max + 1 }).map((_, n) => (
-//             <button key={n} className={n === i ? 'is-on' : ''} onClick={() => setI(n)} aria-label={`Go to review ${n + 1}`} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 
 export function Reviews() {
   const clients = [
@@ -413,51 +359,6 @@ export function Reviews() {
 
 
 /* ---------------- Contact band ---------------- */
-// export function ContactBand() {
-//   const [sent, setSent] = useState(false);
-//   return (
-//     <section className="v2-contact" id="contact">
-//       <div className="container v2-contact__grid">
-//         <Reveal variant="left" className="v2-contact__info">
-//           <span className="eyebrow">Contact Us</span>
-//           <h2 className="v2-h2">Let's talk about your <span className="v2-hl">next project</span></h2>
-//           <p>Share your idea and get a free consultation, estimate and timeline from our team.</p>
-//           <ul>
-//             <li><span><Icon name="pin" size={18} /></span><div><small>Headquarters</small>{company.address}</div></li>
-//             <li><span><Icon name="phone" size={18} /></span><div><small>Call us</small><a href={company.phoneHref}>{company.phone}</a></div></li>
-//             <li><span><Icon name="mail" size={18} /></span><div><small>Email</small><a href={`mailto:${company.email}`}>{company.email}</a></div></li>
-//           </ul>
-//         </Reveal>
-//         <Reveal variant="right" className="v2-contact__card">
-//           {sent ? (
-//             <div className="v2-contact__done">
-//               <span><Icon name="check" size={32} stroke={3} /></span>
-//               <h3>Thank you!</h3>
-//               <p>We'll get back to you within one business day.</p>
-//               <button className="btn btn--outline" onClick={() => setSent(false)}>Send another</button>
-//             </div>
-//           ) : (
-//             /* TODO: connect onSubmit to your backend / Formspree / EmailJS */
-//             <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-//               <h3>Request a FREE Proposal</h3>
-//               <div className="field-row">
-//                 <label className="field"><input required placeholder=" " /><span>Full name</span></label>
-//                 <label className="field"><input required type="email" placeholder=" " /><span>Email</span></label>
-//               </div>
-//               <div className="field-row">
-//                 <label className="field"><input type="tel" placeholder=" " /><span>Phone</span></label>
-//                 <label className="field"><input placeholder=" " /><span>Company</span></label>
-//               </div>
-//               <label className="field"><textarea rows={4} required placeholder=" " /><span>Tell us about your project</span></label>
-//               <label className="pp__consent"><input type="checkbox" required /> I agree to be contacted about my request.</label>
-//               <button className="btn btn--primary" type="submit">Submit <Icon name="arrow" size={18} /></button>
-//             </form>
-//           )}
-//         </Reveal>
-//       </div>
-//     </section>
-//   );
-// }
 
 export function ContactBand() {
   const [sent, setSent] = useState(false);
@@ -523,7 +424,7 @@ export function ContactBand() {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <h3>Request a FREE Proposal</h3>
+              <h3>Request a Proposal</h3>
               <div className="field-row">
                 <label className="field"><input name="from_name" required placeholder=" " /><span>Full name</span></label>
                 <label className="field"><input name="from_email" required type="email" placeholder=" " /><span>Email</span></label>

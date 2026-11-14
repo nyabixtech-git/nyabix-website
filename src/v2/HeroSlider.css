@@ -174,3 +174,17 @@
   .hs__arrows button { width: 44px; height: 44px; }
   .hs__count { display: none; }
 }
+
+.hs__handphone {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hs__handphone img {
+  width: min(420px, 80vw);
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5));
+}
+@media (max-width: 768px) {
+  .hs__handphone img { width: min(300px, 75vw); }
+}

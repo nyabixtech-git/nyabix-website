@@ -17,7 +17,7 @@ export default function Home() {
       {/* <AiBand /> */}
       <Industries />
       <Work />
-      <Clients />
+      {/* <Clients /> */}
       <SolutionsTech />
       <Reviews />
       <ContactBand />

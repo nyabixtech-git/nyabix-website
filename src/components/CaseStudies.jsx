@@ -22,8 +22,7 @@ export default function CaseStudies() {
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
   }, []);
-
-  // Click-and-drag scrolling on desktop
+  
   const onDown = (e) => {
     drag.current = { down: true, x: e.pageX, left: trackRef.current.scrollLeft, moved: false };
     trackRef.current.classList.add('is-dragging');
