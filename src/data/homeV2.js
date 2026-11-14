@@ -54,7 +54,7 @@ export const slides = [
     body: 'LLM apps, document AI, forecasting and automation built for real-world use.',
     primary: 'Explore AI',
     art: 'ai',
-    photo: '/ai-hero-2.png',
+    photo: '/nyabixwebsite/ai-hero-2.png',
     hue: 225,
   },
   {
@@ -63,7 +63,7 @@ export const slides = [
     body: 'Native and cross-platform iOS and Android apps with smooth, fast experiences.',
     primary: 'Explore More',
     art: 'mobile',
-    photo: '/hand-phone-app.png',
+    photo: '/nyabixwebsite/hand-phone-app.png',
     hue: 195,
   },
   {
@@ -72,7 +72,7 @@ export const slides = [
     body: 'Dashboards, portals and SaaS products engineered with modern, proven stacks.',
     primary: 'Explore More',
     art: 'web',
-    photo: '/web-hero.webp',
+    photo: '/nyabixwebsite/web-hero.webp',
     photoClass: 'hs__photo--wide',
     hue: 232,
   },

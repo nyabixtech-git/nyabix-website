@@ -274,27 +274,27 @@ export function Reviews() {
   const clients = [
     {
       name: "PARCO",
-      logo: "/parco-logo.png",
+      logo: "/nyabixwebsite/parco-logo.png",
       style: { width: "155px", height: "65px" },
     },
     {
       name: "Pakistan State Oil",
-      logo: "/pso-logo.png",
+      logo: "/nyabixwebsite/pso-logo.png",
       style: { width: "150px", height: "65px" },
     },
     {
       name: "Saudi Cargo",
-      logo: "/saudi-cargo-logo.svg.webp",
+      logo: "/nyabixwebsite/saudi-cargo-logo.svg.webp",
       style: { width: "170px", height: "75px" },
     },
     {
       name: "Indus Motors (IMC)",
-      logo: "/indus-motors-logo.jfif",
+      logo: "/nyabixwebsite/indus-motors-logo.jfif",
       style: { width: "145px", height: "70px" },
     },
     {
       name: "Moonshot Technologies",
-      logo: "/moonshot-logo.webp",
+      logo: "/nyabixwebsite/moonshot-logo.webp",
       style: { width: "195px", height: "90px" },
     },
   ];

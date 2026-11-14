@@ -118,6 +118,7 @@ export default function HeroSlider() {
                 <SectionLink href="#work" className="btn btn--ghost" tabIndex={i === index ? 0 : -1}>See Our Work</SectionLink>
               </div>
             </div>
+            {console.log(s.photo)}
             <div className="hs__art">
               {s.photo ? (
                 <div className="hs__handphone">
