@@ -141,7 +141,7 @@ export const techStack = {
 export const clientsV2 = ['Lumora', 'Kestrel', 'Orbitly', 'Fernway', 'Quantix', 'Helixa', 'Brightpath', 'Novanta', 'Zentro', 'Arcwell', 'Mavik', 'Solenne'];
 
 /* TODO: replace with countries/cities you serve */
-export const locations = ['Pakistan', 'United States', 'United Kingdom', 'UAE', 'Saudi Arabia', 'Canada', 'Australia'];
+export const locations = ['United States', 'United Kingdom', 'UAE', 'Saudi Arabia', 'Canada', 'Australia', 'Pakistan'];
 
 export const footerV2 = [
   {
